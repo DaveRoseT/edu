@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>系统消息</title>
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="../css/app.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui-iconfont.ttf" />
+    <style type="text/css">
+      body{
+        padding-top: 2.25rem;
+      }
+      .aui-bar-nav{
+        background-color: #00a0ea;
+        position: fixed;
+        top: 0;
+        width: 100%;
+      }
+      .aui-list-item-arrow:before{
+        border-color: #00a0ea;
+      }
+      .aui-list .aui-list-item-text{
+        line-height: 1.1rem;
+      }
+      .aui-list:after,.aui-list:before{
+        height: 0
+      }
+    </style>
+</head>
+<body>
+  <header class="aui-bar aui-bar-nav" id="aui-header">
+      <div class="aui-pull-left"  onClick="closeWin()">
+          <span class="aui-iconfont aui-icon-left"></span>
+      </div>
+      <div class="aui-title">系统消息</div>
+  </header>
+  <div class="aui-bg"></div>
+  <div class="aui-content" style="">
+    <ul class="aui-list aui-media-list">
+
+            <li class="aui-list-item aui-list-item-middle">
+                <div class="aui-media-list-item-inner">
+                    <div class="aui-list-item-media" style="width: 3.5rem;">
+                        <img src="../image/gTb01.png" class="aui-img-round aui-list-img-sm">
+                    </div>
+                    <div class="aui-list-item-inner aui-list-item-arrow">
+                        <div class="aui-list-item-text">
+                            <div class="aui-list-item-title aui-font-size-14">关于app问题</div>
+                        </div>
+                        <div class="aui-list-item-text">
+                            2017-09-12 14:30
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+  </div>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+  function closeWin() {
+    api.closeWin({
+    });
+  }
+</script>
+</html>

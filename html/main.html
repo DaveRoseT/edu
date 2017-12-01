@@ -1,66 +1,406 @@
 <!DOCTYPE HTML>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width"/>
-    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
-    <title>Hello APP</title>
-    <link rel="stylesheet" type="text/css" href="../css/api.css" />
-	<style>
-		#con{
-			margin: 10px;
-			font-size: 24px; 
-		}
-		ul{
-			margin-bottom: 10px;
-		}
-		ul li{ 
-			margin: 5px 10px;
-			padding: 5px;
-			color: #000;
-			word-wrap: break-word;
-		}
-	</style>
-</head>
-<body>
-    <label id="con">Hello APP</label>
-	<div id='sys-info'></div>
-</body>
-<script type="text/javascript" src="../script/api.js"></script>
-<script type="text/javascript">
-    apiready = function(){
-		var ver = api.version;
-		var sType = api.systemType;
-		var sVer = api.systemVersion;
-		var id = api.deviceId;
-		var model = api.deviceModel;
-		var name = api.deviceName;
-		var cType = api.connectionType;
-		var winName = api.winName;
-		var winWidth = api.winWidth;
-		var winHeight = api.winHeight;
-		var frameName = api.frameName || '';
-		var frameWidth = api.frameWidth || '';
-		var frameHeight = api.frameHeight || '';
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width"/>
+      <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+      <title>河南省在线教育平台</title>
+      <link rel="stylesheet" type="text/css" href="../css/api.css" />
+      <link rel="stylesheet" href="../css/aui.css" />
+      <link rel="stylesheet" href="../css/aui-iconfont.ttf">
+      <link rel="stylesheet" href="../css/aui-slide.css" />
+      <link rel="stylesheet" href="../css/iconfont.css">
+      <link rel="stylesheet" href="../css/app.css">
+  	<style>
+      body{
+        padding-top: 2.25rem;
+      }
+      .aui-badge{
+        left: 25%;
+      }
+      .aui-searchbar{
+        background-color: #00a0ea;
+      }
+      .aui-bar-nav{
+        background-color: #00a0ea;
+      }
+      .aui-searchbar-input{
+        padding-left: 0;
+        border-radius: 20px;
+        background-color: #3db3ea;
+        margin: 0;
+      }
+      .aui-searchbar .aui-iconfont{
+        color: #fff !important;
+        font-size: .7rem;
+        line-height: 1.4rem;
+      }
+      .aui-searchbar-input input{
+          margin: 0 auto;
+          text-align: center;
+          color: #fff !important;
+      }
+      .aui-searchbar-input .aui-icon-search{
+        position: absolute;
+        left: 37%;
+      }
+      #aui-slide3{
+        height: 7rem;
+        max-height: 7rem;
+      }
+    .aui-slide-page-dot{
+      width: 8px;
+      height: 8px;
+      background-color: #fff;
+    }
+    .aui-slide-page-active{
+      background-color: #3db3ea;
+    }
+    .aui-col-5 p{
+      position: relative;
+      height: 2.25rem;
+      margin-bottom: .3rem;
+    }
+    .aui-col-5 img{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+    .aui-col-5{
+      color: #999;
+      text-align: center;
+      font-size: .6rem;
+      float: left;
+    }
+    .aui-col-5:active{
+      background-color: #efefef;
+    }
+    .aui-col-5:nth-child(1) img{
+      width: 1.8rem;
+    }
+    .aui-col-5:nth-child(2) img{
+      width: 1.35rem;
+    }
+    .aui-col-5:nth-child(3) img{
+      width: 1.5rem;
+    }
+    .aui-col-5:nth-child(4) img{
+      width: 1.85rem;
+    }
+    .aui-col-5:nth-child(5) img{
+      width: 1.4rem;
+    }
+    .aui-info-item{
+      font-size: .6rem;
+      color: #999;
 
-		var str = '<ul>';
-		str += '<li>引擎版本信息: ' + ver + '</li>';
-		str += '<li>系统类型: ' + sType + '</li>';
-		str += '<li>系统版本: ' + sVer + '</li>';
-		str += '<li>设备标识: ' + id + '</li>';
-		str += '<li>设备型号: ' + model + '</li>';
-		str += '<li>设备名称: ' + name + '</li>';
-		str += '<li>网络状态: ' + cType + '</li>';
-		str += '<li>主窗口名字: ' + winName + '</li>';
-		str += '<li>主窗口宽度: ' + winWidth + '</li>';
-		str += '<li>主窗口高度: ' + winHeight + '</li>';
-		str += '<li>子窗口名字: ' + frameName + '</li>';
-		str += '<li>子窗口宽度: ' + frameWidth + '</li>';
-		str += '<li>子窗口高度: ' + frameHeight + '</li>';
-		str += '</ul>';
+    }
+    .aui-info-item span{
+      font-size: .85rem;
+      color: #333;
+    }
+      .aui-info-item i{
+        font-size: .6rem;
+      }
+    .aui-info{
+      padding: 0;
+      line-height: normal;
+      padding-top: .3rem;
+      margin: 0 5px;
+      margin-bottom: .333rem;
+    }
 
-		$api.byId('sys-info').innerHTML = str;
 
-    };
-</script>
+  	</style>
+  </head>
+  <body>
+    <header class="aui-bar aui-bar-nav" style="position:fixed; top:0;z-index:10000;">
+        <div class="aui-title" style="left:1rem; right: 2rem;">
+            <div class="aui-searchbar">
+                <div class="aui-searchbar-input aui-border-radius" id="search">
+                    <i class="aui-iconfont aui-icon-search"></i>
+                    <input type="search" disabled placeholder="" value="搜索" id="search-input">
+                </div>
+            </div>
+        </div>
+        <div class="aui-pull-right aui-btn">
+            <div class="aui-badge">20</div>
+            <span class="aui-iconfont aui-icon-mail"></span>
+        </div>
+    </header>
+    <!-- 轮播 -->
+    <div id="aui-slide3">
+        <div class="aui-slide-wrap" >
+            <div class="aui-slide-node bg-dark">
+                <img src="../image/banner.png" />
+            </div>
+            <div class="aui-slide-node bg-dark">
+                <img src="../image/banner.png" />
+            </div>
+            <div class="aui-slide-node bg-dark">
+                <img src="../image/banner.png" />
+            </div>
+        </div>
+        <div class="aui-slide-page-wrap"><!--分页容器--></div>
+    </div>
+    <!-- sort -->
+    <div class="aui-content" style="background-color:#fff;padding-bottom:1rem;">
+      <div class="aui-row">
+        <div class="aui-col-5">
+          <p><img src="../image/tb05.png" alt=""></p>
+          点播
+        </div>
+        <div class="aui-col-5">
+          <p><img src="../image/tb03.png" alt=""></p>
+          直播
+        </div>
+        <div class="aui-col-5">
+          <p><img src="../image/tb01.png" alt=""></p>
+          名师
+        </div>
+        <div class="aui-col-5">
+          <p><img src="../image/tb02.png" alt=""></p>
+          专家
+        </div>
+        <div class="aui-col-5">
+        <p><img src="../image/tb04.png" alt=""></p>
+          工作室
+        </div>
+      </div>
+      <div class="seamless-box">
+          <span class="iconfont icon-gonggao"></span>
+          <div class="aui-pull-right sea">
+            <p class="aui-ellipsis-1">啊时间付款哈是开放后就开始读后感会计核算啊时间付款哈是开放后就开始读后感会计核算</p>
+          </div>
+      </div>
+    </div>
+    <div class="aui-bg"></div>
+    <div class="aui-content-padded" style="padding:0 5px;margin:0px;background-color:#fff;">
+      <!-- 点播 -->
+      <div class="aui-info">
+          <div class="aui-info-item">
+              <span class="aui-margin-l-5">点播</span>
+          </div>
+          <div class="aui-info-item">查看全部<i class="aui-iconfont aui-icon-right aui-margin-l-5"></i></div>
+      </div>
+      <div class="aui-row sortBox">
+        <div class="aui-col-xs-4">
+          <img src="../image/gril.jpg" alt="">
+          <div class="sort-layer">
+            <div class="layer-box">
+              <h1 class="aui-ellipsis-1">几何图形的认识几何图形的认识几何图形的认识</h1>
+              <p>雪美眉</p>
+            </div>
+          </div>
+        </div>
+        <div class="aui-col-xs-4">
+          <img src="../image/gril.jpg" alt="">
+          <div class="sort-layer">
+            <div class="layer-box">
+              <h1 class="aui-ellipsis-1">几何图形的认识几何图形的认识几何图形的认识</h1>
+              <p>雪美眉</p>
+            </div>
+          </div>
+        </div>
+        <div class="aui-col-xs-4">
+          <img src="../image/gril.jpg" alt="">
+          <div class="sort-layer">
+            <div class="layer-box">
+              <h1 class="aui-ellipsis-1">几何图形的认识几何图形的认识几何图形的认识</h1>
+              <p>雪美眉</p>
+            </div>
+          </div>
+        </div>
+        <div class="aui-col-xs-4">
+          <img src="../image/gril.jpg" alt="">
+          <div class="sort-layer">
+            <div class="layer-box">
+              <h1 class="aui-ellipsis-1">几何图形的认识几何图形的认识几何图形的认识</h1>
+              <p>雪美眉</p>
+            </div>
+          </div>
+        </div>
+        <div class="aui-col-xs-4">
+          <img src="../image/gril.jpg" alt="">
+          <div class="sort-layer">
+            <div class="layer-box">
+              <h1 class="aui-ellipsis-1">几何图形的认识几何图形的认识几何图形的认识</h1>
+              <p>雪美眉</p>
+            </div>
+          </div>
+        </div>
+        <div class="aui-col-xs-4">
+          <img src="../image/gril.jpg" alt="">
+          <div class="sort-layer">
+            <div class="layer-box">
+              <h1 class="aui-ellipsis-1">几何图形的认识几何图形的认识几何图形的认识</h1>
+              <p>雪美眉</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 直播 -->
+      <div class="aui-info">
+          <div class="aui-info-item">
+              <span class="aui-margin-l-5">直播</span>
+          </div>
+          <div class="aui-info-item">查看全部<i class="aui-iconfont aui-icon-right aui-margin-l-5"></i></div>
+      </div>
+      <div class="aui-row sortBox">
+        <div class="aui-col-xs-4">
+          <img src="../image/gril.jpg" alt="">
+          <div class="sort-layer">
+            <div class="layer-box">
+              <h1 class="aui-ellipsis-1">几何图形的认识几何图形的认识几何图形的认识</h1>
+              <p>雪美眉 <span class="aui-pull-right">20:00</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="aui-col-xs-4">
+          <img src="../image/gril.jpg" alt="">
+          <div class="sort-layer">
+            <div class="layer-box">
+              <h1 class="aui-ellipsis-1">几何图形的认识几何图形的认识几何图形的认识</h1>
+              <p>雪美眉 <span class="aui-pull-right">20:00</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="aui-col-xs-4">
+          <img src="../image/gril.jpg" alt="">
+          <div class="sort-layer">
+            <div class="layer-box">
+              <h1 class="aui-ellipsis-1">几何图形的认识几何图形的认识几何图形的认识</h1>
+              <p>雪美眉 <span class="aui-pull-right">20:00</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="aui-col-xs-4">
+          <img src="../image/gril.jpg" alt="">
+          <div class="sort-layer">
+            <div class="layer-box">
+              <h1 class="aui-ellipsis-1">几何图形的认识几何图形的认识几何图形的认识</h1>
+              <p>雪美眉 <span class="aui-pull-right">已结束</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="aui-col-xs-4">
+          <img src="../image/gril.jpg" alt="">
+          <div class="sort-layer">
+            <div class="layer-box">
+              <h1 class="aui-ellipsis-1">几何图形的认识几何图形的认识几何图形的认识</h1>
+              <p>雪美眉 <span class="aui-pull-right">20:00</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="aui-col-xs-4">
+          <img src="../image/gril.jpg" alt="">
+          <div class="sort-layer">
+            <div class="layer-box">
+              <h1 class="aui-ellipsis-1">几何图形的认识几何图形的认识几何图形的认识</h1>
+              <p>雪美眉 <span class="aui-pull-right">20:00</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 工作室 -->
+      <div class="aui-info">
+          <div class="aui-info-item">
+              <span class="aui-margin-l-5">工作室</span>
+          </div>
+          <div class="aui-info-item">查看全部<i class="aui-iconfont aui-icon-right aui-margin-l-5"></i></div>
+      </div>
+      <div class="aui-row sortBox">
+        <div class="aui-col-xs-4">
+          <img src="../image/gril.jpg" alt="">
+          <div class="sort-layer">
+            <div class="layer-box">
+              <h1 class="aui-ellipsis-1">某某工作室</h1>
+              <p class="aui-ellipsis-1">所属：河南在线教育平台</p>
+            </div>
+          </div>
+        </div>
+        <div class="aui-col-xs-4">
+          <img src="../image/gril.jpg" alt="">
+          <div class="sort-layer">
+            <div class="layer-box">
+              <h1 class="aui-ellipsis-1">某某某某某工作室</h1>
+              <p class="aui-ellipsis-1">所属：河南在线教育平台</p>
+            </div>
+          </div>
+        </div>
+        <div class="aui-col-xs-4">
+          <img src="../image/gril.jpg" alt="">
+          <div class="sort-layer">
+            <div class="layer-box">
+              <h1 class="aui-ellipsis-1">某某某某某工作室</h1>
+              <p class="aui-ellipsis-1">所属：河南在线教育平台</p>
+            </div>
+          </div>
+        </div>
+        <div class="aui-col-xs-4">
+          <img src="../image/gril.jpg" alt="">
+          <div class="sort-layer">
+            <div class="layer-box">
+              <h1 class="aui-ellipsis-1">某某某某某工作室</h1>
+              <p class="aui-ellipsis-1">所属：河南在线教育平台</p>
+            </div>
+          </div>
+        </div>
+        <div class="aui-col-xs-4">
+          <img src="../image/gril.jpg" alt="">
+          <div class="sort-layer">
+            <div class="layer-box">
+              <h1 class="aui-ellipsis-1">某某某某某工作室</h1>
+              <p class="aui-ellipsis-1">所属：河南在线教育平台</p>
+            </div>
+          </div>
+        </div>
+        <div class="aui-col-xs-4">
+          <img src="../image/gril.jpg" alt="">
+          <div class="sort-layer">
+            <div class="layer-box">
+              <h1 class="aui-ellipsis-1">某某某某某工作室</h1>
+              <p class="aui-ellipsis-1">所属：河南在线教育平台</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="../script/api.js"></script>
+    <script src="../script/aui-slide.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      var slide3 = new auiSlide({
+        container:document.getElementById("aui-slide3"),
+        "speed":300,
+        "autoPlay": 5000, //自动播放
+        "loop":true,
+        "pageShow":true,
+        "pageStyle":'dot',
+        'dotPosition':'center'
+      });
+       apiready = function(){
+         api.parseTapmode();
+        document.getElementById('search').addEventListener("click",function(){
+        api.openFrame({
+            name: 'search',
+            url: 'search.html',
+            bounces: false,
+            reload: true,
+            softInputMode: 'pan',
+            rect: {
+                x: 0,
+                y: 0,
+                w: 'auto',
+                h: 'auto'
+            }
+        })
+
+      })
+
+       }
+
+    </script>
+  </body>
 </html>

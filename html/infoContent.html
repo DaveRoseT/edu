@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>消息详情</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="../css/app.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui-iconfont.ttf" />
+    <style type="text/css">
+      body{
+        padding-top: 2.25rem;
+      }
+      .aui-bar-nav{
+        background-color: #00a0ea;
+        position: fixed;
+        top: 0;
+        width: 100%;
+      }
+
+    </style>
+</head>
+<body>
+  <header class="aui-bar aui-bar-nav" id="aui-header">
+      <div class="aui-pull-left"  onClick="closeWin()">
+          <span class="aui-iconfont aui-icon-left"></span>
+      </div>
+      <div class="aui-title">消息详情</div>
+  </header>
+  <div class="aui-bg"></div>
+  <div class="aui-content" style="background-color:#fff;">
+      <div class="info-bt">
+        <h1>关于app问题</h1>
+        <p>2017-09-12 14:30</p>
+      </div>
+      <div class="info-content">
+        <h3>操作系统升级分为两种</h3>
+				<p>为操作系统打补丁和更新操作系统版本。对于移动终端，后一种情况比较常见，例如更换Android系统版本的刷机行等。一般移动终端出厂后，所携带的操作系统是厂家定制过的，其安全性能够得到保证，特别是对于一些信誉较好的大型企业。</p>
+      </div>
+  </div>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+  function closeWin() {
+    api.closeWin({
+    });
+  }
+</script>
+</html>

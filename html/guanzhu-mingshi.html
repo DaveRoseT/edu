@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="../css/app.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui-iconfont.ttf" />
+    <style type="text/css">
+        html,body{
+          background: #fff;
+          height: 100%;
+        }
+        .aui-checkbox{
+          background-color: rgba(255,255,255,.5);
+           border: none;
+        }
+        .aui-grid [class*=aui-col-]{
+          padding: .5rem;
+        }
+        .aui-grid [class*=aui-col-]:active{
+          background: #efefef;
+        }
+        .aui-grid [class*=aui-col-] img{
+          display: block;
+          border-radius: 100%;
+          width: 3.5rem;
+          height: 3.5rem;
+          margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+  <div class="aui-bg"></div>
+<div class="wc" id="wc"><span>取消</span></div>
+  <!-- 直播 -->
+  <div class="aui-content" style="padding:0 5px;margin:0px;padding-top:.5rem; position:relative;" id="c1">
+    <section class="aui-grid">
+    <div class="aui-row">
+        <div class="aui-col-xs-3">
+            <img src="../image/gril.jpg" alt="">
+            <div class="aui-grid-label">村上春树</div>
+        </div>
+        <div class="aui-col-xs-3">
+            <img src="../image/gril.jpg" alt="">
+            <div class="aui-grid-label">村上春树</div>
+        </div>
+        <div class="aui-col-xs-3">
+            <img src="../image/gril.jpg" alt="">
+            <div class="aui-grid-label">村上春树</div>
+        </div>
+        <div class="aui-col-xs-3">
+            <img src="../image/gril.jpg" alt="">
+            <div class="aui-grid-label">村上春树</div>
+        </div>
+        <div class="aui-col-xs-3">
+            <img src="../image/gril.jpg" alt="">
+            <div class="aui-grid-label">村上春树</div>
+        </div>
+    </div>
+</section>
+  </div>
+
+  <div class="del gz" id="del">
+    <a class="">
+      分享
+      <input class="" type="checkbox"  id="all">
+    </a>
+    <a id="delete">
+      关注
+    </a>
+  </div>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/aui-toast.js" ></script>
+<script type="text/javascript">
+  //长按事件
+  // var divs = document.querySelectorAll('.sortBox>div');
+  // for (var i = 0; i < divs.length; i++) {
+  //
+  // }
+/*document.body.addEventListener('touchstart', function(event) {
+      timeout = setTimeout(showC, 2000);
+  }, false);
+  document.body.addEventListener('touchend', function(event) {
+       clearTimeout(timeout);
+  }, false);
+  $api.byId('all').onclick = allSelect;
+  $api.byId('delete').onclick = allDel;
+  $api.byId('wc').onclick = hideC;
+  //取消
+   function hideC(){
+       $api.byId('del').style.display="none";
+       this.style.display="none";
+       var allInputs =document.querySelectorAll('.sortBox>div .chec');
+       for (var i=0; i<allInputs.length;i++){
+         allInputs[i].style.display="none";
+       }
+   }
+   //长按函数
+   function showC(){
+       $api.byId('del').style.display="block";
+       $api.byId('wc').style.display="flex";
+       var allInputs =document.querySelectorAll('.sortBox>div .chec');
+       for (var i=0; i<allInputs.length;i++){
+         allInputs[i].style.display="block";
+
+       }
+   }
+   function allDel(){
+     var all =document.querySelectorAll('.sortBox>div input');
+     for (var i=0; i<all.length;i++){
+         if(all[i].checked){
+           all[i].parentNode.parentNode.remove();
+
+         }
+     }
+     $api.byId('del').style.display="none";
+     var allInputs =document.querySelectorAll('.sortBox>div .chec');
+     for (var i=0; i<allInputs.length;i++){
+       allInputs[i].style.display="none";
+     }
+   }
+   //全选
+   function allSelect(){
+     var all =document.querySelectorAll('.sortBox>div input');
+     for (var i=0; i<all.length;i++){
+         if(this.checked){
+           all[i].checked=true;
+         }else{
+           all[i].checked=false;
+         }
+     }
+   }
+  //阻止跳转
+  function preventS(e){
+    return false;
+  }*/
+
+</script>
+</html>

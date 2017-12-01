@@ -1,0 +1,425 @@
+/*
+
+
+*/
+.seamless-box{
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 20px;
+  background-color:#e9faff;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  margin-top: .7rem;
+}
+.seamless-box span.iconfont.icon-gonggao{
+  color: #00a0ea;
+  margin-left: .75rem;
+}
+.sea{
+  width: 88%;
+  border-radius: 20px;
+  font-size: .6rem;
+  color: #00a0ea;
+}
+.sea p{
+  width: 95%;
+  color: #00a0ea;
+  margin: 0;
+  font-size: .6rem;
+}
+.aui-bg{
+  height: 7px;
+  background-color: #eee;
+}
+
+.sortBox>div{
+  position: relative;
+  padding: 0 5px;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+.sortBox>div:active{
+  opacity: .8;
+}
+
+.sortBox>div input{
+  margin-left: 5px;
+
+}
+.sort-layer{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  padding:0 5px;
+}
+.layer-box{
+  background: rgba(0,0,0,.3);
+  color: #fff;
+  height: 2rem;
+}
+.layer-box h1{
+  font-weight: normal;
+  color: #fff;
+  font-size: .7rem;
+  padding-top: .16rem;
+  line-height: normal;
+  padding-left: .18rem
+}
+.layer-box p{
+  color: #fff;
+  padding-left: .18rem;
+  font-size: .6rem;
+  /*line-height: .8rem;*/
+  margin: 0;
+}
+.layer-box p span{
+  padding-right: .22rem;
+}
+.sortBox>div img{
+  display: block;
+  height: 4.8rem;
+  width: 100%;
+  border-radius: 3px;
+}
+.searchH span{
+  display: inline-block;
+  border: 1px solid #999;
+  border-radius: 20px;
+  padding: .2rem .5rem;
+  margin-right: .2rem;
+  margin-bottom: .5rem;
+  color: #666;
+  font-size: .7rem;
+}
+.searchH span:active{
+  background-color: #efefef;
+}
+.login-box{
+  position: relative;
+  margin-top: 1rem;
+  margin-bottom: .5rem;
+}
+.login-box span{
+  position: absolute;
+  right: 5%;
+  font-size: .7rem;
+  color: #999;
+}
+.login-box img{
+  display: block;
+  margin: 0 auto;
+  width: 2.1rem;
+  margin-top: 3rem;
+}
+.tips{
+  margin-top: -.5rem;
+  padding-left: .9rem;
+  font-size: .6rem;
+  margin-bottom: 1.5rem;
+}
+.RL_box{
+  padding: 0 .9rem;
+  margin-top: .5rem;
+  overflow: hidden;
+}
+.RL_box a{
+  font-size: .6rem;
+  color: #00a0ea;
+}
+.three_login{
+  text-align: center;
+  margin-top: 1rem;
+}
+.three_bt{
+  font-size: .6rem;
+  background: url(../image/dot.png) repeat-x center center;
+  margin-bottom: .5rem;
+}
+.three_bt span{
+  background-color: #fff;
+  color: #999;
+  padding: 0 5px;
+}
+.three_login .aui-row>div img{
+  width: 50%;
+  margin: 0 auto;
+}
+.del{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+  z-index: 10;
+  display: none;
+}
+.del a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  float: left;
+  border: 0;
+  outline: none;
+  border-radius: 0;
+  height: 2.5rem;
+  color: #333;
+  background-color: #ccc;
+  position: relative;
+}
+.del a:first-child{
+  background-color: #00a0ea;
+  color: #fff;
+}
+.del a:active{
+  opacity: .8;
+}
+.del a input{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.labelas{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  padding: 0 5px;
+}
+.emty{
+  font-size: .9rem;
+  margin-top: 1.5rem;
+  text-align: center;
+
+}
+.wc{
+  background-color: #00a0ea;
+  border-radius: 100%;
+  height: 1.75rem;
+  width: 1.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  bottom: 3rem;
+  font-size: .6rem;
+  z-index: 100;
+  display: none;
+}
+.chec{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  display: none;
+}
+.info-bt{
+  text-align: center;
+  padding: 1rem 0 .5rem 0;
+}
+.info-bt h1{
+  font-size: .7rem;
+  font-weight: normal;
+  line-height: 1.5rem;
+}
+.info-bt p{
+  font-size: .6rem;
+  color: #999;
+}
+.info-content{
+  padding: 0 9px;
+}
+.info-content h3{
+  font-size: .6rem;
+  color: #666;
+  margin: .1rem 0 .5rem 0;
+}
+.info-content p{
+  font-size: .6rem;
+  color: #666;
+  text-indent: 1.2rem;
+  line-height: 2;
+}
+.tabcon{
+  position: relative;
+}
+.tabcon>div{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: none;
+}
+.gz>a{
+  width: 100%;
+  background-color: none;
+}
+.bg_box{
+    height: 4.5rem;
+    background: #00a0ea;
+    overflow: hidden;
+}
+.set-list{
+  background: #eee;
+}
+.yzm{
+  position: absolute;
+  top: .2rem;
+  right: 0;
+  width: 30%;
+  z-index: 1000;
+  line-height: 2.2rem;
+}
+.yzm input{
+  font-size: .6rem;
+  color: #333;
+  text-align: center;
+  background: #fff;
+}
+.card{
+  background-color: #fff;
+  box-shadow: 0 0px 1px #ddd;
+  margin: .225rem;
+  overflow: hidden;
+  border-radius: 3px;
+}
+.card .card-header:active{
+  background-color: #efefef;
+}
+.card .card-header{
+  padding-top: .6rem;
+}
+.card img{
+  display: block;
+  width: 3.65rem;
+  height: 3.65rem;
+  margin: 0 auto .225rem auto;;
+  border-radius: 100%;
+
+}
+.card-body{
+  padding-bottom: .225rem;
+}
+
+.card-body h3{
+  font-size: .8rem;
+  line-height: 1.5rem;
+}
+.card-body p{
+  font-size: .7rem;
+}
+.card-footer{
+  font-size: .7rem;
+  box-shadow: 0 -.5px 0px #ddd;
+  height: 1.7rem;
+  line-height: 1.7rem;
+  color: #00a0ea;
+}
+.video{
+  min-height: 10rem;
+  background-color: red;
+}
+.course-bt{
+  display: flex;
+ justify-content: space-between;
+ line-height: 2.5rem;
+ position: relative;
+ color: #606c71;
+}
+.course-bt h3{
+  font-size: .9rem;
+  width: 65%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.course-bt span{
+  color: #ffa304;
+}
+.course-bt span i{
+  font-size: .6rem;
+  font-style: normal;
+}
+.teacher-info{
+  font-size: .7rem;
+  position: relative;
+  padding-bottom: .75rem;
+}
+.teacher-info span{
+  color: #999;
+}
+.teacher-info:after {
+    position: absolute;
+    right: 0;
+    left: 0;
+    height: 1px;
+    content: '';
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+    background-color: #c8c7cc;
+    bottom: -1px;
+}
+.course-bt:before{
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: 1px;
+  content: '';
+  -webkit-transform: scaleY(.5);
+  transform: scaleY(.5);
+  background-color: #c8c7cc;
+  top: -1px;
+}
+.course-con{
+  padding: .45rem 0;
+}
+.course-con h3{
+  font-size: .7rem;
+  font-weight: normal;
+  line-height: 1.5rem;
+}
+.course-con p{
+  margin: 0;
+  font-size: .7rem;
+  text-indent: 1.4rem;
+  line-height: 1.3rem;
+  color: #999;
+}
+
+.plbox{
+
+}
+.pl-list{
+  position: relative;
+  padding:.1rem  0;
+}
+.pl-list:after {
+    position: absolute;
+    right: 0;
+    left: 0;
+    height: 1px;
+    content: '';
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+    background-color: #c8c7cc;
+    top: -1px;
+}
+.pj-content{
+  font-size: .6rem;
+  color: #666;
+  padding: .35rem 0;
+}
+.more{
+  font-size: .6rem;
+  color: #999;
+  text-align: center;
+}

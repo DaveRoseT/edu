@@ -6,94 +6,115 @@
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
     <title>Hello APP</title>
     <link rel="stylesheet" type="text/css" href="./css/api.css" />
+    <link rel="stylesheet" type="text/css" href="./css/aui.css" />
+    <link rel="stylesheet" href="css/iconfont.css">
     <style type="text/css">
     html,body{
         height: 100%;
     }
-    #wrap{
-        height: 100%;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-flex-flow: column;
+    .aui-bar .iconfont{
+      font-size:1.2rem;
+
     }
-    #header{
-        text-align: center; 
-		background-color: #81a9c3; 
-		color: #fff;
-        width: 100%;
+    .aui-bar  .icon-iconbook{
+      font-size: 1rem;
+      margin-bottom: .2rem;
+      display: block;
     }
-    #header h1{
-        font-size: 20px; 
-		height: 44px; 
-		line-height: 44px; 
-		margin: 0em; 
-		color: #fff;
+    .aui-bar .aui-bar-tab .aui-bar-tab-label{
+      bottom: 0;
     }
-    #main{
-        -webkit-box-flex: 1; 
-        -webkit-flex: 1;
-    }
-    #footer{
-        height: 30px; 
-		line-height: 30px;
-        background-color: #81a9c3; 
-        width: 100%;
-        text-align: center;
-    }
-    #footer h5{
-        color: white;
-    }
-    .con{
-		font-size: 28px; 
-		text-align: center;
-	}
     </style>
 </head>
 <body>
-    <div id="wrap">
-        <div id="header">
-            <h1>APICloud</h1>
+
+      <header class="aui-bar aui-bar-nav" id="aui-header" style="display:none">
+           <div>底部工具栏</div>
+       </header>
+       <footer class="aui-bar aui-bar-tab" id="footer">
+        <div id="tabbar1" class="aui-bar-tab-item aui-active" tapmode onclick="randomSwitchBtn(this,'首页',0)">
+            <i class="iconfont icon-home"></i>
+            <div class="aui-bar-tab-label">首页</div>
         </div>
-        <div id="main">
-                
+        <div id="tabbar2" class="aui-bar-tab-item" tapmode onclick="randomSwitchBtn(this,'课程',1)">
+            <i class="iconfont icon-iconbook"></i>
+            <div class="aui-bar-tab-label">课程</div>
         </div>
-        <div id="footer">
-            <h5>Copyright &copy;<span id="year"></span> </h5>
+
+         <div id="tabbar3" class="aui-bar-tab-item" tapmode onclick="randomSwitchBtn(this,'个人中心',2)">
+            <i class="iconfont icon-user"></i>
+            <div class="aui-bar-tab-label">个人中心</div>
         </div>
-    </div>
+    </footer>
 </body>
 <script type="text/javascript" src="./script/api.js"></script>
+<script type="text/javascript" src="./script/aui-tab.js"></script>
 <script type="text/javascript">
-    apiready = function(){
-		//输出Log，Log将显示在APICloud Studio控制台
-		console.log("Hello APICloud");
-
-        var header = $api.byId('header');
-        //适配iOS7+，Android4.4+状态栏沉浸式效果，详见config文档statusBarAppearance字段
+apiready = function(){
+api.parseTapmode();
+        var header = $api.byId('aui-header');
+        var footer =　$api.byId('footer')
         $api.fixStatusBar(header);
-		//动态计算header的高度，因iOS7+和Android4.4+上支持沉浸式效果，
-		//因此header的实际高度可能为css样式中声明的44px加上设备状态栏高度
-		//其中，IOS状态栏高度为20px，Android为25px
-        var headerH = $api.offset(header).h;
-		//footer高度为css样式中声明的30px
-		var footerH = 30;
-		//frame的高度为当前window高度减去header和footer的高度
-		var frameH = api.winHeight - headerH - footerH;
-        api.openFrame({
-            name: 'main',
-            url: 'html/main.html',
-            bounces: true,
-            rect: {
-                x: 0,
-                y: headerH,
-                w: 'auto',
-                h: frameH
+        var headerPos = $api.offset(header);
+        var body_h = api.winHeight;
+        var footer_h = $api.offset(footer).h;
+
+        api.openFrameGroup ({
+            name: 'footer_tab_demo',
+            scrollEnabled:true,
+            rect:{
+            x:0,
+            y:headerPos.h,
+            w:'auto',
+            h:body_h - headerPos.h - footer_h
+            },
+            index:0,
+            preload:3,
+            frames:
+            [{
+                name: 'main',
+                url: 'html/main.html',
+                bounces:false
+            },{
+                name: 'login',
+                url: 'html/login.html',
+                bounces:false
+            },{
+                name: 'c2',
+                url: 'html/c2.html',
+                bounces:false
+            }]
+        }, function(ret, err){
+            var footer = $api.byId('footer');
+            var footerAct = $api.dom(footer, '.aui-bar-tab-item.aui-active');
+    $api.removeCls(footerAct, 'aui-active');
+
+            var name = ret.name;
+            var index = ret.index;
+            if(index==0){
+                $api.addCls($api.byId('tabbar1'), 'aui-active');
+            }else if(index==1){
+                $api.addCls($api.byId('tabbar2'), 'aui-active');
+            }else if(index==2){
+                $api.addCls($api.byId('tabbar3'), 'aui-active');
             }
+        })
+    }
+    function closeWin(){
+        api.closeWin();
+    }
+    function randomSwitchBtn(obj, name, index) {
+        $api.text($api.byId('aui-header'),name);
+    var footer = $api.byId('footer');
+    var footerAct = $api.dom(footer, '.aui-bar-tab-item.aui-active');
+        $api.removeCls(footerAct, 'aui-active');
+        $api.addCls(obj, 'aui-active');
+        api.setFrameGroupIndex({
+            name: 'footer_tab_demo',
+            index: index,
+            scroll:true
         });
 
-        var year = $api.byId('year');
-        year.innerHTML = new Date().getFullYear();
-
-    };
+    }
 </script>
 </html>

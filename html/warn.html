@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="../css/app.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui-iconfont.ttf" />
+    <style type="text/css">
+    /*html,body{
+      overflow-x: hidden;
+    }*/
+      .aui-bar-nav{
+        background-color: #00a0ea;
+      }
+      .aui-list .aui-atitle{
+        width: 80%;
+        font-size: .7rem;
+        line-height: 1.3rem;
+      }
+      .aui-list-item-media{
+        height: 4.5rem;
+      }
+      .aui-list-item-media img{
+        height: 100%;
+      }
+      .tips_bar{
+        font-size: .6rem;
+        color: #00a0ea;
+        padding-right: .5rem;
+      }
+      .tips_bar span{
+          font-size: .6rem;
+      }
+      .aui-list .aui-list-item-text{
+        line-height: 1.3rem;
+        font-size: .6rem;
+      }
+      .aui-list .aui-list-item{
+        padding-left: .45rem;
+      }
+      .aui-info{
+        font-size: .6rem;
+      }
+      .aui-media-list .aui-list-item-inner{
+        padding-right: 0;
+      }
+      .list_info{
+        display: block;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        overflow: hidden;
+      }
+
+    </style>
+</head>
+<body>
+  <header class="aui-bar aui-bar-nav" id="aui-header">
+      <div class="aui-pull-left"  onClick="closeWin()">
+          <span class="aui-iconfont aui-icon-left"></span>
+      </div>
+      <div class="aui-title">提醒</div>
+  </header>
+  <div class="aui-bg"></div>
+  <div class="aui-content" style="padding-top:.2rem;">
+    <ul class="aui-list aui-media-list">
+            <li class="aui-list-item">
+                <div class="aui-media-list-item-inner">
+                    <div class="aui-list-item-media">
+                        <img src="../image/gril.jpg">
+                    </div>
+                    <div class="list_info">
+
+                            <div class="aui-atitle aui-ellipsis-1">几何图形的认识几何图形的认识几何图形的认识</div>
+
+
+                        <div class="aui-list-item-text">
+                            王大笑  <div class="tips_bar">距离开播还有十分钟<span class="aui-iconfont aui-icon-right"></span></div>
+                        </div>
+                        <div class="aui-info aui-margin-t-5" style="padding:0">
+                            <div class="aui-info-item">2015-07-14 10:31</div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-media-list-item-inner">
+                    <div class="aui-list-item-media">
+                        <img src="../image/banner.png">
+                    </div>
+                    <div class="list_info">
+                        <div class="aui-atitle aui-ellipsis-1">几何图形的认识几何图形的认识几何图形的认识</div>
+                        <div class="aui-list-item-text">
+                            王大笑  <div class="tips_bar">距离开播还有十分钟<span class="aui-iconfont aui-icon-right"></span></div>
+                        </div>
+                        <div class="aui-info aui-margin-t-5" style="padding:0">
+                            <div class="aui-info-item">2015-07-14 10:31</div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+  </div>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/aui-toast.js" ></script>
+<script type="text/javascript">
+  function closeWin() {
+    api.closeWin({
+    });
+  }
+</script>
+</html>

@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,initial-scale=1.0,width=device-width"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>设置</title>
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" href="../css/app.css">
+    <style type="text/css">
+      .aui-bar-nav{
+        background-color: #00a0ea;
+      }
+      .aui-list:before,.aui-list::after{
+        height: 0;
+      }
+      .aui-list .aui-list-item{
+        background-color: #00a0ea;
+        padding-top: .8rem;
+      }
+      img.aui-img-round{
+        border: 2px solid #fff;
+      }
+      .aui-media-list .aui-list-item-inner{
+        color: #fff;
+      }
+      .aui-bar-nav .aui-iconfont{
+        font-size: .7rem;
+      }
+      .aui-list-item-arrow:before{
+        border-color: #666;
+      }
+      .set-list .aui-list .aui-list-item{
+        background-color: #fff;
+        margin-bottom: 7px;
+        padding-top: 0
+      }
+      .set-list .aui-list .aui-list-item:active{
+        opacity: .8;
+      }
+      .aui-list-item-inner.aui-list-item-arrow{
+        font-size: .7rem;
+      }
+      .aui-list .aui-list-item i.aui-iconfont {
+        align-self: center;
+        font-size: 0.6rem;
+
+        border-radius: 100%;
+        color: #fff;
+        width: 1.4rem;
+        height: 1.2rem;
+        line-height: 1.2rem;
+        text-align: center;
+     }
+     .set-list .aui-list .aui-list-item:nth-child(1) i{
+       background: rebeccapurple;
+     }
+     .set-list .aui-list .aui-list-item:nth-child(2) i{
+       background: #00a0ea;
+     }
+     .set-list .aui-list .aui-list-item:nth-child(3) i{
+       background: pink;
+     }
+    .aui-list.aui-list-in .aui-list-item-inner:after{
+      height: 0;
+    }
+    </style>
+</head>
+<body>
+  <header class="aui-bar aui-bar-nav" id="aui-header">
+      <div class="aui-pull-left"  onClick="closeWin()">
+          <span class="aui-iconfont aui-icon-left"></span>
+      </div>
+      <div class="aui-title">设置</div>
+  </header>
+  <div class="aui-content" style="background-color:#fff;">
+    <div class="bg_box">
+      <ul class="aui-list aui-media-list">
+            <li class="aui-list-item aui-list-item-middle">
+                <div class="aui-media-list-item-inner">
+                    <div class="aui-list-item-media" style="width: 3rem;">
+                        <img src="../image/gril.jpg" class="aui-img-round aui-list-img-sm">
+                    </div>
+                    <div class="aui-list-item-inner">
+                        流浪男
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="set-list">
+      <div class="aui-bg"></div>
+      <ul class="aui-list aui-list-in">
+            <li class="aui-list-item">
+                <div class="aui-list-item-label-icon">
+                    <i class="aui-iconfont aui-icon-mobile"></i>
+                </div>
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                  手机号
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-label-icon">
+                    <i class="aui-iconfont aui-icon-mail"></i>
+                </div>
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    邮箱
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-label-icon">
+                    <i class="aui-iconfont aui-icon-lock"></i>
+                </div>
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    修改密码
+                </div>
+            </li>
+        </ul>
+    </div>
+  </div>
+  <script type="text/javascript" src="../script/api.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../script/aui-tab.js" charset="utf-8"></script>
+
+  </body>
+</html>

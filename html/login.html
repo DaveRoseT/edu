@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="../css/app.css" />
+    <style type="text/css">
+    body{
+      background-color: #fff;
+    }
+	    .aui-list .aui-list-item{
+        border-radius: 20px;
+        box-shadow: 0px 0px 1px #666;
+        margin: .8rem auto;
+        min-height: 2rem;
+	    }
+      .aui-btn-block.aui-btn-sm{
+        border-radius: 20px;
+
+        margin: 0 auto;
+        font-size: 16px;
+        background: #00a0ea;
+        border-color: #00a0ea;
+        display: flex;
+         justify-content: center;
+         align-items: center;
+        height: 2rem;
+      }
+      .aui-list.aui-form-list .aui-list-item-inner{
+        min-height: 2rem;
+      }
+      .aui-list-item-input input{
+        min-height: 2rem;
+      }
+      .aui-list .aui-list-item-label-icon{
+        min-height: 2rem;
+        line-height: 2rem;
+      }
+      .aui-list .aui-list-item:after,.aui-list:before,.aui-list:after{height:0; }
+      .aui-list .aui-list-item i.aui-iconfont{
+        color: #424242;
+      }
+      .aui-tips{
+        position: fixed;
+      top: 0;
+        display: none;
+        -webkit-justify-content: center;
+        background-color: rgba(255,0,0,.6);
+      }
+      .aui-tips span{
+        font-size: .7rem;
+      }
+    </style>
+</head>
+<body>
+    <div class="login-box aui-text-center">登录/注册 <span>取消</span><img src="../image/l_logo.png" alt=""></div>
+    <div class="aui-content aui-margin-b-15" style="background-color:#fff;width:80%;margin:0 auto;">
+        <ul class="aui-list aui-form-list">
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-label-icon">
+                        <i class="aui-iconfont aui-icon-my"></i>
+                    </div>
+                    <div class="aui-list-item-input">
+                        <input type="text" id="username" placeholder="用户名" value="">
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-label-icon">
+                        <i class="aui-iconfont aui-icon-lock"></i>
+                    </div>
+                    <div class="aui-list-item-input">
+                        <input type="password" id="password" placeholder="密码" value="">
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <!-- <div class="tips aui-text-danger">
+        *账号密码错误
+        </div> -->
+        <div class="aui-btn aui-btn-info aui-btn-block aui-btn-sm" onclick="cmdLogin();">登录</div>
+        <div class="RL_box">
+          <a class="aui-pull-left">注册新用户</a>
+          <a class="aui-pull-right">忘记密码</a>
+        </div>
+
+    </div>
+    <div class="three_login">
+      <div class="three_bt">
+        <span>第三方登录</span>
+      </div>
+      <div class="aui-row">
+        <div class="aui-col-xs-4"><img src="../image/w.png" alt=""></div>
+        <div class="aui-col-xs-4"><img src="../image/q.png" alt=""></div>
+        <div class="aui-col-xs-4"><img src="../image/x.png" alt=""></div>
+      </div>
+    </div>
+    <!-- 未做完 -->
+    <div class="aui-tips" id="tips-1" style="">
+        <span>提示</span>
+        <div class="aui-tips-title">消息提示条消息提示条消息提示</div>
+
+    </div>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/aui-toast.js" ></script>
+<script type="text/javascript">
+    apiready = function(){
+        api.parseTapmode();
+        $api.rmStorage('user');
+    }
+    /** 定义提示框 */
+    var toast = new auiToast();
+    /** 登录 */
+    function cmdLogin() {
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        toast.loading({
+            title:"登录中",
+            duration:2000
+        },function(ret){
+            sendPostLogin(username, password, function(ret){
+                toast.hide();
+                if (ret['uid'] > 0) {
+                    //显示登录成功提示框
+                    toast.success({
+                        title: '登录成功',
+                        duration:500
+                    });
+                    //封装用户配置
+                    var user = {
+                        uid: ret['uid'],
+                        username: username,
+                        password: password
+                    };
+                    //保存用户配置
+                    $api.setStorage('user', user);
+                    //发送登录成功事件
+                    api.sendEvent({
+                        name: 'xxjzLogin',
+                        extra: user
+                    });
+                } else {
+                  // var tips = document.getElementById('tips-1');
+                  // tips.style.display="flex";
+                  // clearInterval(timer);
+                  // var timer = setInterval(function(){
+                  //   tips.style.display="none";
+                  //   clearInterval(timer);
+                  // },3000)
+                    api.alert({
+                        title: '登录失败',
+                        msg: ret['uname']
+                    });
+                }
+            });
+        });
+    }
+    /** 发送登录命令 */
+    function sendPostLogin(username, password, callback) {
+        api.ajax({
+            url: 'http://qxu1192050221.my3w.com/xxjzApp/index.php/Home/Login/login_api',
+            method: 'post',
+            data: {
+                values: {
+                    username: username,
+                    password: password,
+                    submit: 'xxjzAUI'
+                }
+            }
+        },function(ret, err){
+            if (ret) {
+                callback(ret);
+                // api.alert({msg:JSON.stringify(ret['uname'])});
+            } else {
+                callback({
+                    uid: 0,
+                    uname: err['msg']
+                });
+                // api.alert({msg:JSON.stringify(err)});
+            }
+        });
+    }
+    /** 打开指定窗体 */
+    function openWin(name){
+        api.openWin({
+            name: ''+name+'',
+            url: ''+name+'.html',
+            slidBackEnabled: true,
+            slidBackType: 'edge',
+            animation: {
+                type: 'movein',
+                subtype: 'from_bottom'
+            },
+            delay: 100
+        });
+    }
+
+</script>
+</html>

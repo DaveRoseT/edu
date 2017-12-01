@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,initial-scale=1.0,width=device-width"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>邮箱</title>
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" href="../css/app.css">
+    <style type="text/css">
+      .aui-bar-nav{
+        background-color: #00a0ea;
+      }
+      .aui-list:after{
+        height: 0
+      }
+      .aui-list:before{
+          height: 0
+      }
+      .aui-list .aui-list-item:after,.aui-list .aui-list-item:before{
+        height: 0;
+      }
+      .aui-list .aui-list-item{
+        min-height: 2.6rem;
+        margin-top: 7px;
+      }
+    </style>
+</head>
+<body>
+
+  <header class="aui-bar aui-bar-nav" id="aui-header">
+      <div class="aui-pull-left"  onClick="closeWin()">
+          <span class="aui-iconfont aui-icon-close"></span>
+      </div>
+      <div class="aui-title">邮箱</div>
+      <div class="aui-pull-right aui-btn" onclick="test()">
+          <span class="aui-iconfont aui-icon-correct"></span>
+      </div>
+  </header>
+  <div class="aui-content">
+    <ul class="aui-list aui-form-list">
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+
+                    <div class="aui-list-item-input">
+                        <input id="mail" type="text" placeholder="请输入邮箱">
+                    </div>
+                </div>
+            </li>
+        </ul>
+  </div>
+  <script type="text/javascript" src="../script/api.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../script/aui-toast.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    apiready = function(){
+        api.parseTapmode();
+    }
+
+  var toast = new auiToast();
+  function test(){
+       var temp = document.getElementById("mail");
+       //对电子邮件的验证
+       var myreg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+       if(!myreg.test(temp.value)){
+         toast.fail({
+             title:"请输入有效邮箱",
+             duration:2000
+         });
+         temp.focus();
+           return false;
+       }else {
+         
+       }
+    }
+  </script>
+
+  </body>
+</html>

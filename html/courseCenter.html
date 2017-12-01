@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,initial-scale=1.0,width=device-width"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>课程中心</title>
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" href="../css/app.css">
+    <style type="text/css">
+      body{
+        padding-top: 2.25rem;
+      }
+      .aui-bar-nav{
+        background-color: #00a0ea;
+        position: fixed;
+        top: 0;
+        width: 100%;
+      }
+      .aui-list .aui-list-item{
+        padding-left: 1.2rem;
+      }
+    </style>
+</head>
+<body>
+  <header class="aui-bar aui-bar-nav" id="aui-header">
+      <div class="aui-pull-left"  onClick="closeWin()">
+          <span class="aui-iconfont aui-icon-left"></span>
+      </div>
+      <div class="aui-title">课程中心</div>
+      <!-- <div class="aui-pull-right" id="manage">
+          <span class="">
+            管理
+          </span>
+      </div> -->
+  </header>
+  <div class="aui-content">
+    <div class="aui-tab" id="tab">
+        <div id="tab1" class="aui-tab-item aui-active" tapmode onclick="randomSwitchBtn(this,0)">点播</div>
+        <div id="tab2" class="aui-tab-item" tapmode onclick="randomSwitchBtn(this,1)">直播</div>
+        <div id="tab3" class="aui-tab-item" tapmode onclick="randomSwitchBtn(this,2)">名师</div>
+        <div id="tab4" class="aui-tab-item" tapmode  onclick="randomSwitchBtn(this,3)">专家</div>
+        <div id="tab5" class="aui-tab-item" tapmode  onclick="randomSwitchBtn(this,4)">工作室</div>
+    </div>
+  </div>
+  <script type="text/javascript" src="../script/api.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../script/aui-tab.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    apiready = function(){
+    api.parseTapmode();
+            var header = $api.byId('aui-header');
+            var taber = $api.byId('tab');
+            // $api.fixStatusBar(header);
+            var headerPos = $api.offset(header);
+            var taberH = $api.offset(taber);
+            var body_h = api.winHeight;
+            api.openFrameGroup ({
+                name: 'taber',
+                scrollEnabled:false,
+                rect:{
+                x:0,
+                y:headerPos.h + taberH.h,
+                w:'auto',
+                h:body_h - headerPos.h - taberH.h
+                },
+                index:0,
+                preload:5,
+                frames:
+                [{
+                    name: 'courseDianbo',
+                    url: 'courseDianbo.html',
+                    bounces:false
+                },{
+                    name: 'courseLive',
+                    url: 'courseLive.html',
+                    bounces:false
+                },{
+                    name: 'courseTeacher',
+                    url: 'courseTeacher.html',
+                    bounces:false
+                },{
+                    name: 'courseZuan',
+                    url: 'courseZuan.html',
+                    bounces:false
+                },{
+                    name: 'courseRoom',
+                    url: 'courseRoom.html',
+                    bounces:false
+                }]
+            }, function(ret, err){
+                var tab = $api.byId('tab');
+                var tabAct = $api.dom(tab, '.aui-tab-item.aui-active');
+                $api.removeCls(tabAct, 'aui-active');
+                var name = ret.name;
+                var index = ret.index;
+                if(index==0){
+                    $api.addCls($api.byId('tab1'), 'aui-active');
+                }else if(index==1){
+                    $api.addCls($api.byId('tab2'), 'aui-active');
+                }else if(index==2){
+                    $api.addCls($api.byId('tab3'), 'aui-active');
+                }else if(index==3){
+                    $api.addCls($api.byId('tab4'), 'aui-active');
+                }else if(index==4){
+                    $api.addCls($api.byId('tab5'), 'aui-active');
+                }
+            })
+
+        }
+        function closeWin(){
+            api.closeWin();
+        }
+        function randomSwitchBtn(obj,index) {
+            var tab = $api.byId('tab');
+            var tabAct = $api.dom(tab, '.aui-tab-item.aui-active');
+            $api.removeCls(tabAct, 'aui-active');
+            $api.addCls(obj, 'aui-active');
+            api.setFrameGroupIndex({
+                name: 'taber',
+                index: index,
+                scroll:true
+            });
+        }
+
+  </script>
+  </body>
+</html>

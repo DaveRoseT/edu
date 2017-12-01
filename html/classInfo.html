@@ -1,0 +1,51 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+      <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+      <title>课程消息</title>
+      <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+      <link rel="stylesheet" type="text/css" href="../css/app.css" />
+      <link rel="stylesheet" type="text/css" href="../css/aui-iconfont.ttf" />
+      <style type="text/css">
+        body{
+          padding-top: 2.25rem;
+          margin: 0;
+        }
+        .aui-bar-nav{
+          background-color: #00a0ea;
+          position: fixed;
+          top: 0;
+          width: 100%;
+        }
+        .aui-list-item-arrow:before{
+          border-color: #00a0ea;
+        }
+        .aui-list .aui-list-item-text{
+          line-height: 1.1rem;
+        }
+        .aui-list:after,.aui-list:before{
+          height: 0
+        }
+      </style>
+  </head>
+  <body>
+    <header class="aui-bar aui-bar-nav" id="aui-header">
+        <div class="aui-pull-left"  onClick="closeWin()">
+            <span class="aui-iconfont aui-icon-left"></span>
+        </div>
+        <div class="aui-title">课程消息</div>
+    </header>
+    <div class="aui-content" style="">
+      <img src="../image/wu.png" style="margin:0 auto;margin-top:2.5rem; width:138px;display:block;" alt="">
+    </div>
+  </body>
+  <script type="text/javascript" src="../script/api.js"></script>
+  <script type="text/javascript">
+    function closeWin() {
+      api.closeWin({
+      });
+    }
+  </script>
+  </html>

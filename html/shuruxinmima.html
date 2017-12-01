@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,initial-scale=1.0,width=device-width"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>修改密码</title>
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" href="../css/app.css">
+    <style type="text/css">
+      .aui-bar-nav{
+        background-color: #00a0ea;
+      }
+      .aui-list:after{
+        height: 0
+      }
+      .aui-list:before{
+          height: 0
+      }
+      .aui-list .aui-list-item:after,.aui-list .aui-list-item:before{
+        height: 0;
+      }
+      .aui-list .aui-list-item{
+        min-height: 2.6rem;
+        margin-top: 7px;
+      }
+    </style>
+</head>
+<body>
+
+  <header class="aui-bar aui-bar-nav" id="aui-header">
+      <div class="aui-pull-left"  onClick="closeWin()">
+          <span class="aui-iconfont aui-icon-left"></span>
+      </div>
+      <div class="aui-title">修改密码</div>
+
+  </header>
+  <div class="aui-content">
+    <ul class="aui-list aui-form-list">
+        <li class="aui-list-item">
+            <div class="aui-list-item-inner">
+                <div class="aui-list-item-input">
+                    <input type="password" id='password' onblur="kong()" placeholder="请输入6-16位字母/数字/下划线组合密码">
+                </div>
+                <!-- <div class="aui-list-item-label-icon">
+                      <i class="aui-iconfont aui-icon-display"></i>
+                </div> -->
+            </div>
+        </li>
+        <li class="aui-list-item">
+            <div class="aui-list-item-inner">
+                <div class="aui-list-item-input">
+                    <input type="password" id="repsword" onblur="kong()" placeholder="再次输入密码">
+                </div>
+                <!-- <div class="aui-list-item-label-icon">
+                        <i class="aui-iconfont aui-icon-display"></i>
+                    </div> -->
+            </div>
+        </li>
+        <li class="aui-list-item" style="background-color:#f5f5f5;">
+          <div class="aui-list-item-inner aui-list-item-center aui-list-item-btn">
+              <div id="yz" class="aui-btn aui-btn-block" style="color:#999;" onclick="check(event)">确定</div>
+          </div>
+      </li>
+    </ul>
+  </div>
+  <script type="text/javascript" src="../script/api.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../script/aui-toast.js" charset="utf-8"></script>
+  <script type="text/javascript">
+  // 验证未完成
+    apiready = function(){
+        api.parseTapmode();
+    }
+    var toast = new auiToast();
+    var password = document.getElementById("password").value;
+    var repsword = document.getElementById("repsword").value;
+    function kong(){
+      if(password.length<5 && repsword.length<5){
+        toast.fail({
+            title:"密码不得少于六位",
+            duration:2000
+        });
+        this.focus();
+      }
+    }
+    function check(event){
+       var yz = $api.byId('yz');
+       if(password != repsword) {
+         toast.fail({
+             title:"两次输入不一样",
+             duration:2000
+         });
+          if (event.preventDefault) {
+               event.preventDefault();
+           } else {
+               event.returnValue = false;
+           }
+           $api.removeCls(yz,"aui-btn-info");
+        } else {
+            $api.addCls(yz,"aui-btn-info");
+           return true;
+
+        }
+  }
+  </script>
+
+</body>
+</html>
