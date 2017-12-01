@@ -48,7 +48,9 @@
   <script type="text/javascript" src="../script/api.js" charset="utf-8"></script>
   <script type="text/javascript" src="../script/aui-tab.js" charset="utf-8"></script>
   <script type="text/javascript">
+    var videoPlayer;
     apiready = function(){
+      dialogBox = api.require('videoPlayer');
     api.parseTapmode();
             var header = $api.byId('aui-header');
             var taber = $api.byId('tab');
@@ -106,6 +108,7 @@
                 scroll:true
             });
         }
+
 
   </script>
   </body>
