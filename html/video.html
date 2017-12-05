@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,initial-scale=1.0,width=device-width"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>关注</title>
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" href="../css/app.css">
+    <style type="text/css">
+
+      body{
+
+      }
+      /*.aui-bar-nav{
+        background-color: rgba(0,0,0,0);
+        position: fixed;
+        top: 0;
+        width: 100%;
+      }*/
+      .aui-list .aui-list-item{
+        padding-left: 1.2rem;
+      }
+    </style>
+</head>
+<body>
+  <div class="aui-content">
+    <div class="comment">
+			<div class="bt">
+					我的笔记
+			</div>
+			<div class="com_box">
+				<div class="com_list">
+					<div class="com_img">
+						<!--<img class="mui-pull-left" src="../dist/img/case.png"/>-->
+						<div class="nameTime mui-pull-left">
+							<span>王易</span>
+							<span>一个小时前</span>
+						</div>
+					</div>
+					<div class="com_xq">
+						本课程主要向非生物科学专业学生传授生命科学本课程主要向非生物科学专业学生传授生命科学本课程主要向非生物科学专业学生传授生命科学
+					</div>
+				</div>
+			</div>
+		</div>
+    <div class="st_bj">
+			<p>
+				<span class="iconfont icon-biji"></span>
+			</p>
+
+		</div>
+    <div class="bj_box" style="">
+				<div class="bt">
+					课程笔记 <button type="button" class="aui-btn aui-btn-info">完成</button>
+				</div>
+				<div class="aui-input-row" style="margin: 0 5px;">
+					<textarea id="textarea" rows="3" placeholder="在此输入课堂笔记内容~~"></textarea>
+				</div>
+			</div>
+  </div>
+  <script type="text/javascript" src="../script/api.js" charset="utf-8"></script>
+  <script src="../script/jquery.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    apiready = function(){
+      // http://img.ksbbs.com/asset/Mon_1703/05cacb4e02f9d9e.mp4
+      api.parseTapmode();
+      var videoPlayer = api.require('videoPlayer');
+        videoPlayer.play({
+          texts : {
+              head : {
+                  title : '标题'
+              }
+          },
+          styles : {
+            head : {
+                    bg : 'rgba(0.5,0.5,0.5,0)',
+                    height : 44,
+                    titleSize : 14,
+                    titleColor : '#fff',
+                    backSize : 16,
+                    backImg : 'fs://img/back.png',
+                    setSize : 16,
+                    setImg : 'fs://img/set.png'
+            },
+            foot : {
+                    bg : 'rgba(0.5,0.5,0.5,0.7)',
+                    height : 44,
+                    playSize : 16,
+                    playImg : 'fs://img/back.png',
+                    pauseImg : 'fs://img/back.png',
+                    nextSize : 16,
+                    nextImg : 'fs://img/back.png',
+                    timeSize : 12,
+                    timeColor : '#fff',
+                    sliderImg : 'fs://img/slder.png',
+                    progressColor : '#696969',
+                    progressSelected : '#76EE00'
+            }
+          },
+          path : 'http://img.ksbbs.com/asset/Mon_1703/05cacb4e02f9d9e.mp4',
+          autoPlay : true,
+          scalingMode:'scaleToFill'
+          }, function(ret, err) {
+                if (ret) {
+                        status:false
+                } else {
+                        //alert(JSON.stringify(err));
+                }
+        });
+    }
+
+			$('.st_bj').click(function(){
+				$('.bj_box').show();
+				$(this).hide();
+				$('textarea').focus();
+			})
+
+			$(document).mouseup(function(e){
+			  var _con = $('.bj_box');   // 设置目标区域
+			  if(!_con.is(e.target) && _con.has(e.target).length === 0){ // Mark 1
+			    _con.hide();
+			   $('.st_bj').show();
+			  }
+			})
+
+			var clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
+			$(window).on('resize', function () {
+			    var nowClientHeight = document.documentElement.clientHeight || document.body.clientHeight;
+			    if (clientHeight > nowClientHeight) {
+			        //键盘弹出的事件处理
+            $('.bj_box').css({"bottom":"-60px"})
+			    }
+			    else {
+			        //键盘收起的事件处理
+			        $('.bj_box').hide();
+			        $('.st_bj').show();
+			    }
+			});
+		</script>
+
+  </body>
+</html>

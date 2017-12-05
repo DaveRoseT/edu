@@ -4,78 +4,76 @@
     <meta charset="utf-8">
     <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,initial-scale=1.0,width=device-width"/>
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
-    <title>关注</title>
-    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
-    <link rel="stylesheet" href="../css/iconfont.css">
-    <link rel="stylesheet" href="../css/app.css">
+    <title>课程中心</title>
+    <link rel="stylesheet" type="text/css" href="../../css/aui.css" />
+    <link rel="stylesheet" href="../../css/iconfont.css">
+    <link rel="stylesheet" href="../../css/app.css">
     <style type="text/css">
-
       body{
-
-      }
-      /*.aui-bar-nav{
-        background-color: rgba(0,0,0,0);
-        position: fixed;
-        top: 0;
-        width: 100%;
-      }*/
-      .aui-list .aui-list-item{
-        padding-left: 1.2rem;
+        background: #fff;
       }
     </style>
 </head>
 <body>
-  <header class="aui-bar aui-bar-nav" id="aui-header">
-      <div class="aui-pull-left"  onClick="closeWin()">
+  <header class="aui-bar aui-bar-nav" style="position:fixed;top:0;width:100%;background-color:rgba(0,0,0,0);">
+      <div class="aui-pull-left aui-btn" onclick="closeWin()">
           <span class="aui-iconfont aui-icon-left"></span>
       </div>
       <div class="aui-title"></div>
-      <!-- <div class="aui-pull-right" id="manage">
-          <span class="">
-            管理
-          </span>
-      </div> -->
   </header>
-  <!-- <div class="video" id="video">
+  <div class="aui-content" style="">
 
-  </div> -->
-  <div class="aui-content">
+    <div class="m_tea" id="mTea">
+        <div class="m_bg"></div>
+			<img class="tea_bg" src="../../image/gril.jpg">
+			<div class="m_t_img">
+				<img src="../../image/gril.jpg">
+			</div>
+			<div class="m_t_name">
+				<h3>王菁菁</h3>
+				<p><span>高级教师 </span>|<span>小学英语</span></p>
+				<p>只有不努力的思想，没有不努力的人！</p>
+			</div>
+			<div class="m_t_btn">
+				<a><span class="aui-iconfont aui-icon-plus"></span>关注</a>
+				<a><span class="iconfont icon-xin"></span>关注</a>
+			</div>
+		</div>
     <div class="aui-tab" id="tab">
-        <div id="tab1" class="aui-tab-item aui-active" tapmode onclick="randomSwitchBtn(this,0)">课程介绍</div>
-        <div id="tab2" class="aui-tab-item" tapmode onclick="randomSwitchBtn(this,1)">课程目录</div>
+        <div id="tab1" class="aui-tab-item aui-active" tapmode onclick="randomSwitchBtn(this,0)">专家简介</div>
+        <div id="tab2" class="aui-tab-item" tapmode onclick="randomSwitchBtn(this,1)">专家讲座</div>
+
     </div>
   </div>
-  <script type="text/javascript" src="../script/api.js" charset="utf-8"></script>
-  <script type="text/javascript" src="../script/aui-tab.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../../script/api.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../../script/aui-tab.js" charset="utf-8"></script>
   <script type="text/javascript">
     apiready = function(){
     api.parseTapmode();
-            var header = $api.byId('aui-header');
+            var mTea = $api.byId('mTea');
             var taber = $api.byId('tab');
-            // var video1 = $api.byId('video');
-             $api.fixStatusBar(header);
-            var headerPos = $api.offset(header);
             var taberH = $api.offset(taber);
+            var mTeaH = $api.offset(mTea);
             var body_h = api.winHeight;
             api.openFrameGroup ({
                 name: 'taber',
-                scrollEnabled:true,
+                scrollEnabled:false,
                 rect:{
                 x:0,
-                y:headerPos.h+ taberH.h ,
+                y:taberH.h + mTeaH.h,
                 w:'auto',
-                h:body_h - headerPos.h - taberH.h
+                h:body_h - taberH.h - mTeaH.h
                 },
                 index:0,
-                preload:4,
+                preload:2,
                 frames:
                 [{
-                    name: 'secondintro',
-                    url: 'secondintro.html',
+                    name: 'zhuanjiajianjie',
+                    url: 'zhuanjiajianjie.html',
                     bounces:false
                 },{
-                    name: 'secondmulu',
-                    url: 'secondmulu.html',
+                    name: 'zhuanjiajiangzuo',
+                    url: 'zhuanjiajiangzuo.html',
                     bounces:false
                 }]
             }, function(ret, err){
@@ -106,6 +104,7 @@
                 scroll:true
             });
         }
+
   </script>
   </body>
 </html>

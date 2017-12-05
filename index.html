@@ -12,6 +12,9 @@
     html,body{
         height: 100%;
     }
+    .aui-bar{
+
+    }
     .aui-bar .iconfont{
       font-size:1.2rem;
 
@@ -28,20 +31,20 @@
 </head>
 <body>
 
-      <header class="aui-bar aui-bar-nav" id="aui-header" style="display:none">
-           <div>底部工具栏</div>
+      <header class="aui-bar aui-bar-nav" id="aui-header" style="min-height:0;">
+           <div></div>
        </header>
        <footer class="aui-bar aui-bar-tab" id="footer">
-        <div id="tabbar1" class="aui-bar-tab-item aui-active" tapmode onclick="randomSwitchBtn(this,'首页',0)">
+        <div id="tabbar1" class="aui-bar-tab-item aui-active" tapmode onclick="randomSwitchBtn(this,0)">
             <i class="iconfont icon-home"></i>
             <div class="aui-bar-tab-label">首页</div>
         </div>
-        <div id="tabbar2" class="aui-bar-tab-item" tapmode onclick="randomSwitchBtn(this,'课程',1)">
+        <div id="tabbar2" class="aui-bar-tab-item" tapmode onclick="randomSwitchBtn(this,1)">
             <i class="iconfont icon-iconbook"></i>
             <div class="aui-bar-tab-label">课程</div>
         </div>
 
-         <div id="tabbar3" class="aui-bar-tab-item" tapmode onclick="randomSwitchBtn(this,'个人中心',2)">
+         <div id="tabbar3" class="aui-bar-tab-item" tapmode onclick="randomSwitchBtn(this,2)">
             <i class="iconfont icon-user"></i>
             <div class="aui-bar-tab-label">个人中心</div>
         </div>
@@ -51,14 +54,16 @@
 <script type="text/javascript" src="./script/aui-tab.js"></script>
 <script type="text/javascript">
 apiready = function(){
+  api.setStatusBarStyle({
+          style: 'light'
+      });
 api.parseTapmode();
-        var header = $api.byId('aui-header');
-        var footer =　$api.byId('footer')
-        $api.fixStatusBar(header);
-        var headerPos = $api.offset(header);
-        var body_h = api.winHeight;
-        var footer_h = $api.offset(footer).h;
-
+       var header = $api.byId('aui-header');
+       var footer =　$api.byId('footer')
+       $api.fixStatusBar(header);
+       var headerPos = $api.offset(header);
+       var body_h = api.winHeight;
+       var footer_h = $api.offset(footer).h;
         api.openFrameGroup ({
             name: 'footer_tab_demo',
             scrollEnabled:true,
@@ -103,8 +108,8 @@ api.parseTapmode();
     function closeWin(){
         api.closeWin();
     }
-    function randomSwitchBtn(obj, name, index) {
-        $api.text($api.byId('aui-header'),name);
+    function randomSwitchBtn(obj,index) {
+        $api.text($api.byId('aui-header'));
     var footer = $api.byId('footer');
     var footerAct = $api.dom(footer, '.aui-bar-tab-item.aui-active');
         $api.removeCls(footerAct, 'aui-active');

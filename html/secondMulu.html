@@ -9,133 +9,103 @@
     <link rel="stylesheet" href="../css/iconfont.css">
     <link rel="stylesheet" href="../css/app.css">
     <style type="text/css">
-      .aui-list .aui-list-item{
-        padding-left: 0;
-      }
-      .aui-list .aui-list-item-media{
-        padding-top: 0;
-        padding-bottom: 0;
-      }
-      .aui-list-item-inner.aui-list-item-arrow{
-        padding-top: 0;
-        padding-bottom: 0;
-      }
-      .aui-card-list{
-        margin-bottom: 0;
-      }
       body{
-        background-color:#fff;
+        padding-top: 2.2rem;
+        background-color: #fff;
       }
-      .aui-list:after{
-        height: 0;
+      .aui-list span{
+        display: inline-block;
+        width: 75%;
+      }
+      .aui-list .aui-list-item-inner{
+        position: relative;
+      }
+      .aui-list i,.aui-list b{
+        font-style: normal;
+      }
+      .aui-list i{
+        font-size: 12px;
+        color: #999;
+      }
+      .aui-list b{
+        color: #00a0ea;
+        font-size:20px;
       }
       .aui-list:before{
         height: 0;
       }
+      .aui-list .aui-list-header{
+        background-color: #fff;
+        position: relative;
+        padding: 0;
+        line-height:2.25rem;
+        padding-left: .5rem;
+      }
+      .aui-list .aui-list-header:after{
+        position: absolute;
+        right: 0;
+        left: 0;
+        height: 1px;
+        content: '';
+        -webkit-transform: scaleY(.5);
+        transform: scaleY(.5);
+        background-color: #ccc;
+        bottom: 1px;
+      }
+
+      .aui-list .aui-list-item{
+
+      }
+      .aui-list .aui-list-item:after{
+        background-color: #ccc;
+      }
     </style>
 </head>
 <body>
-  <div class="aui-content" style="padding:0 .45rem;background-color:#fff;">
-    <div class="course-bt">
-        <h3>天若有情天亦老，人间正道是沧桑</h3><span class="aui-pull-right">￥255/<i>课时</i></span>
-    </div>
-    <div class="course-info">
-      <div class="teacher-info">
-        大宁老师 | <span>朝凤路小学</span>
-      </div>
-      <div class="course-con">
-        <h3>【课程介绍】</h3>
-        <p>
-					法制教育与课外实践活动相结合，丰富了法制教育的内容和形式。每学期根据学校法制教育计划经常请司法部门的同志到校给我校师生作法制教育讲座，围绕学生的切身利益，传授实用法律知识，教育学生学会依法保护自己的权益；利用宣传板报阵地教育，通过利用升旗仪式、开大会等形式对学生进行宣传教育。
-        </p>
-      </div>
-    </div>
-    <div class="course-bt bot">
-        <h3>评论</h3>
-    </div>
-    <div class="plbox">
-      <div class="pl-list">
-        <div class="aui-card-list">
-            <div class="aui-card-list-content">
-                <ul class="aui-list aui-media-list">
-                    <li class="aui-list-item aui-list-item-middle">
-                        <div class="aui-media-list-item-inner">
-                            <div class="aui-list-item-media" style="width: 3rem;">
-                                <img src="../image/gril.jpg" class="aui-img-round" >
-                            </div>
-                            <div class="aui-list-item-inner">
-                                <div class="aui-list-item-text">
-                                    <div class="aui-list-item-title aui-font-size-14">李某人</div>
-                                </div>
-                                <div class="aui-list-item-text">
-                                    一个小时前
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="pj-content">
-            法制教育与课外实践活动相结合
-        </div>
-      </div>
-      <div class="pl-list">
-        <div class="aui-card-list">
-            <div class="aui-card-list-content">
-                <ul class="aui-list aui-media-list">
-                    <li class="aui-list-item aui-list-item-middle">
-                        <div class="aui-media-list-item-inner">
-                            <div class="aui-list-item-media" style="width: 3rem;">
-                                <img src="../image/gril.jpg" class="aui-img-round" >
-                            </div>
-                            <div class="aui-list-item-inner">
-                                <div class="aui-list-item-text">
-                                    <div class="aui-list-item-title aui-font-size-14">李某人</div>
-                                </div>
-                                <div class="aui-list-item-text">
-                                    一个小时前
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="pj-content">
-            法制教育与课外实践活动相结合
-        </div>
-      </div>
-      <div class="pl-list">
-        <div class="aui-card-list">
-            <div class="aui-card-list-content">
-                <ul class="aui-list aui-media-list">
-                    <li class="aui-list-item aui-list-item-middle">
-                        <div class="aui-media-list-item-inner">
-                            <div class="aui-list-item-media" style="width: 3rem;">
-                                <img src="../image/gril.jpg" class="aui-img-round" >
-                            </div>
-                            <div class="aui-list-item-inner">
-                                <div class="aui-list-item-text">
-                                    <div class="aui-list-item-title aui-font-size-14">李某人</div>
-                                </div>
-                                <div class="aui-list-item-text">
-                                    一个小时前
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="pj-content">
-            法制教育与课外实践活动相结合
-        </div>
-      </div>
-    </div>
-    <div class="more">查看更多<i class="aui-iconfont aui-icon-down"></i></div>
-  </div>
 
+  <div class="aui-content" style="background-color:#fff;">
+    <!-- 左右滑动 -->
+    <div class="slider"></div>
+    <!-- 随堂测试 -->
+    <ul class="aui-list aui-margin-b-5">
+      <li class="aui-list-header  aui-font-size-16">
+          随堂测试
+      </li>
+        <li class="aui-list-item">
+            <div class="aui-list-item-inner">
+              <span class="aui-ellipsis-1 aui-font-size-14">【法律讲堂】课程资料课程资料课程资料课程资料课程资料课程资料</span> <i>word文件</i><b class="iconfont icon-xiazai"></b>
+            </div>
+        </li>
+    </ul>
+    <!-- 资料下载 -->
+    <ul class="aui-list">
+      <li class="aui-list-header  aui-font-size-16">
+          资料下载
+      </li>
+        <li class="aui-list-item">
+            <div class="aui-list-item-inner">
+              <span class="aui-ellipsis-1 aui-font-size-14">【法律讲堂】课程资料课程资料课程资料课程资料课程资料课程资料</span> <i>word文件</i><b class="iconfont icon-xiazai"></b>
+            </div>
+        </li>
+        <li class="aui-list-item">
+            <div class="aui-list-item-inner">
+              <span class="aui-ellipsis-1 aui-font-size-14">【法律讲堂】课程资料课程资料课程资料课程资料课程资料课程资料</span> <i>word文件</i><b class="iconfont icon-xiazai"></b>
+            </div>
+        </li>
+        <li class="aui-list-item">
+            <div class="aui-list-item-inner">
+              <span class="aui-ellipsis-1 aui-font-size-14">【法律讲堂】课程资料课程资料课程资料课程资料课程资料课程资料</span> <i>word文件</i><b class="iconfont icon-xiazai"></b>
+            </div>
+        </li>
+        <li class="aui-list-item">
+            <div class="aui-list-item-inner">
+              <span class="aui-ellipsis-1 aui-font-size-14">【法律讲堂】课程资料课程资料课程资料课程资料课程资料课程资料</span> <i>word文件</i><b class="iconfont icon-xiazai"></b>
+            </div>
+        </li>
+    </ul>
+    <div class="more  aui-margin-t                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         -10 ">查看更多<i class="aui-iconfont aui-icon-down"></i></div>
+  </div>
   <script type="text/javascript" src="../script/api.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../script/jquery.min.js"></script>
   </body>
 </html>

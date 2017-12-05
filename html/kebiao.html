@@ -1,0 +1,256 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,initial-scale=1.0,width=device-width"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>课程课表</title>
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" href="../css/app.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/swiper-3.3.1.min.css">
+  	<script src="../script/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="../script/swiper-3.3.1.min.js"></script>
+    <style>
+      .aui-list .aui-list-item-media{
+
+      }
+      .aui-media-list .aui-list-item:active{
+        background: #efefef;
+      }
+      .aui-list-item-arrow:before{
+        border-color: #00a0ea;
+      }
+      .aui-bar-nav .aui-btn.aui-btn-outlined{
+        border: 0;
+      }
+      .aui-dot{
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+    </style>
+	</head>
+	<body>
+<header class="aui-bar aui-bar-nav">
+            <div class="aui-pull-left aui-btn">
+                <span class="aui-iconfont aui-icon-left"></span>
+            </div>
+            <div class="aui-title">课程</div>
+            <div class="aui-pull-right aui-btn aui-btn-outlined">
+                <div class="aui-dot"></div>
+                <span class="iconfont icon-tishi"></span>
+            </div>
+        </header>
+    <!-- 加载ing END -->
+    <section class="out-wrap">
+        <div class="header-main">
+             <section class="header">
+         		<div class="btbt">我的课表<span class="js_jin" style="margin-left:10px;color:#00a0ea">回到今天</span></div>
+                  <div class="child date">
+                     <em id="ymym">2016-06-</em>
+                  	<span id="top_shu"></span>
+                  </div>
+             </section>
+        </div>
+        <!-- end header -->
+        <section class="content">
+        <!-- SUN MON TUE WED THU FRI SAT -->
+            <section class="week" style="margin-bottom: 14px;">
+                <ul class="clearfix f28">
+                    <li><a href="#">日</a></li>
+                    <li><a href="#">一</a></li>
+                    <li><a href="#">二</a></li>
+                    <li><a href="#">三</a></li>
+                    <li><a href="#">四</a></li>
+                    <li><a href="#">五</a></li>
+                    <li><a href="#">六</a></li>
+                </ul>
+            </section>
+            <section class="calenda">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <table id="now1" class="tables">
+                                <tr class="">
+                                    <td class=" list"><i>12</i><em>中秋</em></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="swiper-slide">
+                            <table id="now2" class="tables">
+                                <tr class="">
+                                    <td class=" list"><i>12</i><em>中秋</em></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="swiper-slide">
+                            <table id="now3" class="tables">
+                                <tr class="">
+                                    <td class="list"><i>12</i><em>中秋</em></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- end calenda -->
+        </section>
+        <!-- end content -->
+
+        <section class="prorup"></section>
+        <!-- 弹窗 -->
+        <div class="tc"></div>
+        <div class="tc-innner">
+            <div class="current-time">
+                <i class="i-year">1900</i><i class="i-month">1</i><i class="i-date">1</i><em id="top_week">星期二</em>
+            </div>
+            <div class="swiper-box">
+                <i class="i1"></i>
+                <i class="i2"></i>
+                <i class="i3"></i>
+                 <i class="i4"></i>
+
+                <div class="swiper-box-li">
+                    <div class="swiper-container2 nbxs">
+                        <div class="swiper-wrapper year">
+
+                            <div class="swiper-slide">2011年</div>
+                            <div class="swiper-slide">2012年</div>
+                            <div class="swiper-slide">2013年</div>
+                            <div class="swiper-slide">2014年</div>
+                            <div class="swiper-slide">2015年</div>
+                            <div class="swiper-slide">2016年</div>
+                            <div class="swiper-slide">2017年</div>
+                            <div class="swiper-slide">2018年</div>
+                            <div class="swiper-slide">2019年</div>
+                            <div class="swiper-slide">2020年</div>
+                            <div class="swiper-slide">2021年</div>
+                            <div class="swiper-slide">2022年</div>
+                            <div class="swiper-slide">2023年</div>
+                            <div class="swiper-slide">2024年</div>
+                            <div class="swiper-slide">2025年</div>
+                            <div class="swiper-slide">2026年</div>
+                            <div class="swiper-slide">2027年</div>
+                            <div class="swiper-slide">2028年</div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-box-li">
+                    <div class="swiper-container3 nbxs">
+                        <div class="swiper-wrapper month">
+                            <div class="swiper-slide">1月</div>
+                            <div class="swiper-slide">2月</div>
+                            <div class="swiper-slide">3月</div>
+                            <div class="swiper-slide">4月</div>
+                            <div class="swiper-slide">5月</div>
+                            <div class="swiper-slide">6月</div>
+                            <div class="swiper-slide">7月</div>
+                            <div class="swiper-slide">8月</div>
+                            <div class="swiper-slide">9月</div>
+                            <div class="swiper-slide">10月</div>
+                            <div class="swiper-slide">11月</div>
+                            <div class="swiper-slide">12月</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-box-li">
+                    <div class="swiper-container4 nbxs">
+                        <div class="swiper-wrapper date">
+                            <div class="swiper-slide">1日</div>
+                            <div class="swiper-slide">2日</div>
+                            <div class="swiper-slide">3日</div>
+                            <div class="swiper-slide">4日</div>
+                            <div class="swiper-slide">5日</div>
+                            <div class="swiper-slide">6日</div>
+                            <div class="swiper-slide">7日</div>
+                            <div class="swiper-slide">8日</div>
+                            <div class="swiper-slide">9日</div>
+                            <div class="swiper-slide">10日</div>
+                            <div class="swiper-slide">11日</div>
+                            <div class="swiper-slide">12日</div>
+                            <div class="swiper-slide">13日</div>
+                            <div class="swiper-slide">14日</div>
+                            <div class="swiper-slide">15日</div>
+                            <div class="swiper-slide">16日</div>
+                            <div class="swiper-slide">17日</div>
+                            <div class="swiper-slide">18日</div>
+                            <div class="swiper-slide">19日</div>
+                            <div class="swiper-slide">20日</div>
+                            <div class="swiper-slide">21日</div>
+                            <div class="swiper-slide">22日</div>
+                            <div class="swiper-slide">23日</div>
+                            <div class="swiper-slide">24日</div>
+                            <div class="swiper-slide">25日</div>
+                            <div class="swiper-slide">26日</div>
+                            <div class="swiper-slide">27日</div>
+                            <div class="swiper-slide">28日</div>
+                            <div class="swiper-slide">29日</div>
+                            <div class="swiper-slide">30日</div>
+                            <div class="swiper-slide">31日</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tc-bot">
+                <div class="tc-bot-left">取消</div>
+                <div class="tc-bot-right">确定</div>
+                <i></i>
+            </div>
+        </div>
+    </section>
+    <div class="aui-content">
+      <div class="aui-card-list">
+
+        <div class="aui-card-list-content">
+            <ul class="aui-list aui-media-list">
+                <li class="aui-list-item aui-list-item-middle">
+                    <div class="aui-media-list-item-inner">
+                        <div class="aui-list-item-media">
+                            <img src="../image/gril.jpg" class="aui-list-img-sm">
+                        </div>
+                        <div class="aui-list-item-inner aui-list-item-arrow">
+                            <div class="aui-list-item-text">
+                              <div class="aui-list-item-title aui-font-size-14 aui-ellipsis-1">比啊同体比啊同体比啊同体比啊同体比啊同体</div>
+
+                            </div>
+                            <div class="aui-list-item-text" style="line-height:1.8rem;">
+                              老师name
+
+                            </div>
+                            <div class="aui-list-item-text">
+                              2017-09-12 14:30
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="aui-list-item aui-list-item-middle">
+                    <div class="aui-media-list-item-inner">
+                        <div class="aui-list-item-media">
+                            <img src="../image/erwe.png" class="aui-list-img-sm">
+                        </div>
+                        <div class="aui-list-item-inner aui-list-item-arrow">
+                            <div class="aui-list-item-text">
+                              <div class="aui-list-item-title aui-font-size-14 aui-ellipsis-1">比啊同体比啊同体比啊同体比啊同体比啊同体</div>
+
+                            </div>
+                            <div class="aui-list-item-text" style="line-height:1.8rem;">
+                              老师name
+
+                            </div>
+                            <div class="aui-list-item-text">
+                              2017-09-12 14:30
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+  </div>
+	  <script src="../script/date.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>
