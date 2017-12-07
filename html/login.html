@@ -55,7 +55,7 @@
     </style>
 </head>
 <body>
-    <div class="login-box aui-text-center">登录/注册 <span>取消</span><img src="../image/l_logo.png" alt=""></div>
+    <div class="login-box aui-text-center" id="aui-header">登录/注册 <span>取消</span><img src="../image/l_logo.png" alt=""></div>
     <div class="aui-content aui-margin-b-15" style="background-color:#fff;width:80%;margin:0 auto;">
         <ul class="aui-list aui-form-list">
             <li class="aui-list-item">
@@ -110,7 +110,13 @@
 <script type="text/javascript" src="../script/aui-toast.js" ></script>
 <script type="text/javascript">
     apiready = function(){
+      api.setStatusBarStyle({
+              style: 'dark'
+          });
         api.parseTapmode();
+        var header = $api.byId('aui-header');
+        $api.fixStatusBar(header);
+
         $api.rmStorage('user');
     }
     /** 定义提示框 */

@@ -53,9 +53,15 @@
   <script type="text/javascript" src="../script/api.js" charset="utf-8"></script>
   <script type="text/javascript" src="../script/aui-toast.js" charset="utf-8"></script>
   <script type="text/javascript">
-    apiready = function(){
-        api.parseTapmode();
-    }
+  apiready = function(){
+    api.setStatusBarStyle({
+            style: 'light'
+        });
+      api.parseTapmode();
+      var header = $api.byId('aui-header');
+      $api.fixStatusBar(header);
+
+  }
 
   var toast = new auiToast();
   function test(){
@@ -70,7 +76,7 @@
          temp.focus();
            return false;
        }else {
-         
+
        }
     }
   </script>

@@ -10,16 +10,17 @@
     <link rel="stylesheet" href="../../css/app.css">
     <script src="../../script/iscroll.js" charset="utf-8"></script>
     <script type="text/javascript">
-      var myScroll;
+       var myScroll;
       function loaded () {
-        myScroll = new IScroll('#wrapper', { scrollX: true, scrollY: false, mouseWheel: true });
+        myScroll = new IScroll('#wrapper', { scrollX: true, scrollY: true, mouseWheel: true });
       }
-      document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+      //document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
     </script>
     <style type="text/css">
       body{
         /*padding-top: 2.2rem;*/
         background-color: #fff;
+
       }
       .aui-list span{
         display: inline-block;

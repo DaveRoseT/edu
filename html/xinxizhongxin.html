@@ -36,7 +36,7 @@
       </div>
       <div class="aui-title">消息中心</div>
   </header>
-  <div class="aui-bg"></div>
+  <div class="aui-bg" style="margin-top:25px;"></div>
   <div class="aui-content" style="">
     <ul class="aui-list aui-media-list">
 
@@ -90,6 +90,14 @@
 </body>
 <script type="text/javascript" src="../script/api.js"></script>
 <script type="text/javascript">
+apiready = function(){
+  api.setStatusBarStyle({
+          style: 'light'
+      });
+    api.parseTapmode();
+    var header = $api.byId('aui-header');
+    $api.fixStatusBar(header);
+}
   function closeWin() {
     api.closeWin({
     });

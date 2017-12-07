@@ -25,20 +25,19 @@
     </style>
 </head>
 <body>
-  <header class="aui-bar aui-bar-nav" id="aui-header">
-      <div class="aui-pull-left"  onClick="closeWin()">
+
+  <header class="aui-bar aui-bar-nav" style="position:fixed;top:25px;width:100%;background-color:rgba(0,0,0,0);">
+      <div class="aui-pull-left aui-btn" onclick="closeWin()">
           <span class="aui-iconfont aui-icon-left"></span>
       </div>
+      <div class="aui-pull-right aui-btn">
+          <span>分享</span>
+      </div>
       <div class="aui-title"></div>
-      <!-- <div class="aui-pull-right" id="manage">
-          <span class="">
-            管理
-          </span>
-      </div> -->
   </header>
-  <!-- <div class="video" id="video">
+  <div class="video" id="video">
 
-  </div> -->
+  </div>
   <div class="aui-content">
     <div class="aui-tab" id="tab">
         <div id="tab1" class="aui-tab-item aui-active" tapmode onclick="randomSwitchBtn(this,0)">课程介绍</div>
@@ -50,21 +49,20 @@
   <script type="text/javascript">
     apiready = function(){
     api.parseTapmode();
-            var header = $api.byId('aui-header');
+
             var taber = $api.byId('tab');
-            // var video1 = $api.byId('video');
-             $api.fixStatusBar(header);
-            var headerPos = $api.offset(header);
+            var video = $api.byId('video');
             var taberH = $api.offset(taber);
+            var videoH = $api.offset(video);
             var body_h = api.winHeight;
             api.openFrameGroup ({
                 name: 'taber',
                 scrollEnabled:false,
                 rect:{
                 x:0,
-                y:headerPos.h+ taberH.h ,
+                y: taberH.h+videoH.h,
                 w:'auto',
-                h:body_h - headerPos.h - taberH.h
+                h:body_h-videoH.h - taberH.h
                 },
                 index:0,
                 preload:4,

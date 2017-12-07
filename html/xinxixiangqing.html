@@ -29,7 +29,7 @@
       </div>
       <div class="aui-title">消息详情</div>
   </header>
-  <div class="aui-bg"></div>
+  <div class="aui-bg" style="margin-top:25px;"></div>
   <div class="aui-content" style="background-color:#fff;">
       <div class="info-bt">
         <h1>关于app问题</h1>
@@ -43,6 +43,13 @@
 </body>
 <script type="text/javascript" src="../script/api.js"></script>
 <script type="text/javascript">
+apiready = function(){
+    api.parseTapmode();
+
+    var header = $api.byId('aui-header');
+    $api.fixStatusBar(header);
+
+}
   function closeWin() {
     api.closeWin({
     });

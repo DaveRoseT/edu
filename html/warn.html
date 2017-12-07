@@ -72,10 +72,7 @@
                         <img src="../image/gril.jpg">
                     </div>
                     <div class="list_info">
-
                             <div class="aui-atitle aui-ellipsis-1">几何图形的认识几何图形的认识几何图形的认识</div>
-
-
                         <div class="aui-list-item-text">
                             王大笑  <div class="tips_bar">距离开播还有十分钟<span class="aui-iconfont aui-icon-right"></span></div>
                         </div>
@@ -107,6 +104,15 @@
 <script type="text/javascript" src="../script/api.js"></script>
 <script type="text/javascript" src="../script/aui-toast.js" ></script>
 <script type="text/javascript">
+apiready = function(){
+  api.setStatusBarStyle({
+          style: 'light'
+      });
+    api.parseTapmode();
+    var header = $api.byId('aui-header');
+    $api.fixStatusBar(header);
+
+}
   function closeWin() {
     api.closeWin({
     });

@@ -43,9 +43,10 @@
   </body>
   <script type="text/javascript" src="../script/api.js"></script>
   <script type="text/javascript">
-    function closeWin() {
-      api.closeWin({
-      });
-    }
+  apiready = function(){
+      api.parseTapmode();
+      var header = $api.byId('aui-header');
+      $api.fixStatusBar(header);
+  }
   </script>
   </html>

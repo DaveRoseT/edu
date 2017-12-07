@@ -29,7 +29,7 @@
           </span>
       </div> -->
   </header>
-  <div class="aui-content">
+  <div class="aui-content" style="">
     <div class="aui-tab" id="tab">
         <div id="tab1" class="aui-tab-item aui-active" tapmode onclick="randomSwitchBtn(this,0)">课程</div>
         <div id="tab2" class="aui-tab-item" tapmode onclick="randomSwitchBtn(this,1)">名师</div>
@@ -44,7 +44,7 @@
     api.parseTapmode();
             var header = $api.byId('aui-header');
             var taber = $api.byId('tab');
-            // $api.fixStatusBar(header);
+             $api.fixStatusBar(header);
             var headerPos = $api.offset(header);
             var taberH = $api.offset(taber);
             var body_h = api.winHeight;

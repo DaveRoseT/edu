@@ -66,13 +66,19 @@
   <script type="text/javascript" src="../script/api.js" charset="utf-8"></script>
   <script type="text/javascript" src="../script/aui-toast.js" charset="utf-8"></script>
   <script type="text/javascript">
-    apiready = function(){
-        api.parseTapmode();
-    }
+  apiready = function(){
+    api.setStatusBarStyle({
+            style: 'light'
+        });
+      api.parseTapmode();
+      var header = $api.byId('aui-header');
+      $api.fixStatusBar(header);
+
+  }
     var toast = new auiToast();
     //点击登录按钮时效果
      var yz = $api.byId('yz');
-  
+
     //验证码倒计时
     var countdown=10;
     function settime(obj) {
