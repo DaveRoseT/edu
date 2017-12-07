@@ -808,3 +808,24 @@
      background: url(../image/star.png) no-repeat;
       background-size:100% ;
      }
+    .add_video{
+      display: block;
+      height: 4.8rem;
+
+      width: 100%;
+      border-radius: 3px;
+      text-align: center;
+      color: #999;
+      font-size: 14px;
+      border: 1px solid #999;
+    }
+    .add_video:active{
+      color: #333;
+      border-color: #333;
+
+    }
+    .add_video i{
+      font-size: 20px;
+        display: block;
+      margin-top: 1rem;
+    }
