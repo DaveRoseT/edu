@@ -4,18 +4,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,initial-scale=1.0,width=device-width"/>
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
-    <title>课程</title>
-    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
-    <link rel="stylesheet" href="../css/iconfont.css">
-    <link rel="stylesheet" href="../css/app.css">
+    <title>关注</title>
+    <link rel="stylesheet" type="text/css" href="../../css/aui.css" />
+    <link rel="stylesheet" href="../../css/iconfont.css">
+    <link rel="stylesheet" href="../../css/app.css">
     <style type="text/css">
-      .aui-bar-nav{
-        background-color: #00a0ea;
+
+      body{
+
       }
-      .aui-tab-item{
-        height: auto;
-        line-height: normal;
-      }
+      /*.aui-bar-nav{
+        background-color: rgba(0,0,0,0);
+        position: fixed;
+        top: 0;
+        width: 100%;
+      }*/
       .aui-list .aui-list-item{
         padding-left: 1.2rem;
       }
@@ -26,55 +29,31 @@
       <div class="aui-pull-left"  onClick="closeWin()">
           <span class="aui-iconfont aui-icon-left"></span>
       </div>
-      <div class="aui-title">课程</div>
+      <div class="aui-title"></div>
       <!-- <div class="aui-pull-right" id="manage">
           <span class="">
             管理
           </span>
       </div> -->
   </header>
+  <!-- <div class="video" id="video">
+
+  </div> -->
   <div class="aui-content">
-    <div class="aui-tab aui-list aui-media-list" id="tab">
-        <div id="tab1" class="aui-list-item aui-list-item-middle aui-tab-item aui-active"  tapmode onclick="randomSwitchBtn(this,0)">
-            <div class="aui-media-list-item-inner">
-                <div class="aui-list-item-media" style="width: 3rem;">
-                    <img src="../image/zbo.png" class="aui-img-round aui-list-img-sm">
-                </div>
-                <div class="aui-list-item-inner">
-                    <div class="aui-list-item-text">
-                        <div class="aui-list-item-title aui-font-size-16" style="color:#fa6367;">1</div>
-                    </div>
-                    <div class="aui-list-item-text">
-                        我的直播
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="tab2" class="aui-list-item aui-list-item-middle aui-tab-item"  tapmode onclick="randomSwitchBtn(this,1)">
-          <div class="aui-media-list-item-inner">
-              <div class="aui-list-item-media" style="width: 3rem;">
-                  <img src="../image/dbo.png" class="aui-img-round aui-list-img-sm">
-              </div>
-              <div class="aui-list-item-inner">
-                  <div class="aui-list-item-text">
-                      <div class="aui-list-item-title aui-font-size-16" style="color:#fdb526;">8</div>
-                  </div>
-                  <div class="aui-list-item-text">
-                      我的点播
-                  </div>
-              </div>
-          </div>
-        </div>
+    <div class="aui-tab" id="tab">
+        <div id="tab1" class="aui-tab-item aui-active" tapmode onclick="randomSwitchBtn(this,0)">课程介绍</div>
+        <div id="tab2" class="aui-tab-item" tapmode onclick="randomSwitchBtn(this,1)">课程目录</div>
     </div>
   </div>
-  <script type="text/javascript" src="../script/api.js" charset="utf-8"></script>
-  <script type="text/javascript" src="../script/aui-tab.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../../script/api.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../../script/aui-tab.js" charset="utf-8"></script>
   <script type="text/javascript">
     apiready = function(){
     api.parseTapmode();
             var header = $api.byId('aui-header');
             var taber = $api.byId('tab');
-            // $api.fixStatusBar(header);
+            // var video1 = $api.byId('video');
+             $api.fixStatusBar(header);
             var headerPos = $api.offset(header);
             var taberH = $api.offset(taber);
             var body_h = api.winHeight;
@@ -83,20 +62,20 @@
                 scrollEnabled:false,
                 rect:{
                 x:0,
-                y:headerPos.h + taberH.h,
+                y:headerPos.h+ taberH.h ,
                 w:'auto',
                 h:body_h - headerPos.h - taberH.h
                 },
                 index:0,
-                preload:2,
+                preload:4,
                 frames:
                 [{
-                    name: 'myLive',
-                    url: 'myLive.html',
+                    name: 'secondintro',
+                    url: 'secondintro.html',
                     bounces:false
                 },{
-                    name: 'myDianbo',
-                    url: 'myDianbo.html',
+                    name: 'secondmulu',
+                    url: 'secondmulu.html',
                     bounces:false
                 }]
             }, function(ret, err){
@@ -127,7 +106,6 @@
                 scroll:true
             });
         }
-
   </script>
   </body>
 </html>

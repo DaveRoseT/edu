@@ -145,13 +145,7 @@
                         extra: user
                     });
                 } else {
-                  // var tips = document.getElementById('tips-1');
-                  // tips.style.display="flex";
-                  // clearInterval(timer);
-                  // var timer = setInterval(function(){
-                  //   tips.style.display="none";
-                  //   clearInterval(timer);
-                  // },3000)
+
                     api.alert({
                         title: '登录失败',
                         msg: ret['uname']
@@ -163,7 +157,7 @@
     /** 发送登录命令 */
     function sendPostLogin(username, password, callback) {
         api.ajax({
-            url: 'http://qxu1192050221.my3w.com/xxjzApp/index.php/Home/Login/login_api',
+            url: '',
             method: 'post',
             data: {
                 values: {
@@ -185,7 +179,7 @@
             }
         });
     }
-    /** 打开指定窗体 */
+    /** 打开指定窗体
     function openWin(name){
         api.openWin({
             name: ''+name+'',
@@ -198,7 +192,7 @@
             },
             delay: 100
         });
-    }
+    }*/
 
 </script>
 </html>

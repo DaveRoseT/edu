@@ -5,9 +5,9 @@
     <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,initial-scale=1.0,width=device-width"/>
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
     <title></title>
-    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
-    <link rel="stylesheet" href="../css/iconfont.css">
-    <link rel="stylesheet" href="../css/app.css">
+    <link rel="stylesheet" type="text/css" href="../../css/aui.css" />
+    <link rel="stylesheet" href="../../css/iconfont.css">
+    <link rel="stylesheet" href="../../css/app.css">
     <style type="text/css">
       body{
         padding-bottom: 3.5rem;
@@ -37,9 +37,64 @@
       }
       .aui-bar-tab{
         box-shadow: 0px 0px 1px #ccc;
+        z-index:100;
       }
       .tjk .aui-bar-tab-item:active{
           opacity: .8;
+      }
+      .aui-searchbar{
+        width:100%;
+        background: #fff;
+      }
+      .aui-searchbar-input{
+        background-color: #efefef;
+        margin-right: 0;
+        height: 1.8rem;
+        min-height: 1.8rem;
+        line-height: 1.7rem;
+        margin-right: .5rem;
+      }
+      .aui-searchbar form{
+        width:100%;
+      }
+      .aui-searchbar-input input{
+        height: 1.8rem;
+        min-height: 1.8rem;
+        line-height: 1.7rem;
+        padding:0 10px;
+      }
+      .aui-searchbar .fas {
+          font-size: 0.7rem;
+          color: #fff;
+          height: 1.8rem;
+          min-height: 1.8rem;
+          line-height: 1.8rem;
+          text-align: center;
+          -webkit-transition: all .3s;
+          transition: all .3s;
+          background: #06bafa;
+          border:0;
+          padding: 0 .6rem;
+          margin-right: .5rem;
+      }
+      .chechBox{
+        color: #999
+      }
+      .chechBox .aui-checkbox{
+        width:.8rem;
+        height:.8rem;
+        margin-right: .2rem;
+        margin-top: .1rem;
+      }
+      .chechBox .aui-checkbox:before{
+        top: 53%;
+        left: 48%;
+        height:.2rem;
+      }
+      .chechBox .aui-checkbox:after{
+        top: 53%;
+        left: 48%;
+        height:.2rem;
       }
     </style>
 </head>
@@ -50,7 +105,8 @@
     </div>
     <div class="course-info">
       <div class="teacher-info">
-        大宁老师 | <span>朝凤路小学</span>
+        <span>直播时间:2018.06.12 10:00</span>
+        <label class="aui-pull-right chechBox"><input class="aui-checkbox" type="checkbox" name="checkbox" checked>开启提醒</label>
       </div>
       <div class="course-con">
         <h3>【课程介绍】</h3>
@@ -70,7 +126,7 @@
                     <li class="aui-list-item aui-list-item-middle">
                         <div class="aui-media-list-item-inner">
                             <div class="aui-list-item-media" style="width: 3rem;">
-                                <img src="../image/gril.jpg" class="aui-img-round" >
+                                <img src="../../image/gril.jpg" class="aui-img-round" >
                             </div>
                             <div class="aui-list-item-inner">
                                 <div class="aui-list-item-text">
@@ -96,7 +152,7 @@
                     <li class="aui-list-item aui-list-item-middle">
                         <div class="aui-media-list-item-inner">
                             <div class="aui-list-item-media" style="width: 3rem;">
-                                <img src="../image/gril.jpg" class="aui-img-round" >
+                                <img src="../../image/gril.jpg" class="aui-img-round" >
                             </div>
                             <div class="aui-list-item-inner">
                                 <div class="aui-list-item-text">
@@ -122,7 +178,7 @@
                     <li class="aui-list-item aui-list-item-middle">
                         <div class="aui-media-list-item-inner">
                             <div class="aui-list-item-media" style="width: 3rem;">
-                                <img src="../image/gril.jpg" class="aui-img-round" >
+                                <img src="../../image/gril.jpg" class="aui-img-round" >
                             </div>
                             <div class="aui-list-item-inner">
                                 <div class="aui-list-item-text">
@@ -144,35 +200,89 @@
     </div>
     <div class="more">查看更多<i class="aui-iconfont aui-icon-down"></i></div>
   </div>
+  <div class="px" id="ppx">
+   <div class="px_box">
+     <h3 id="fs">80%</h3>
+     <p id="pj">好评</p>
+     <ul class="" id="ulSra">
+       <li class="light" tapmode><a title="20%" rel='差评' href="javascript:;"></a></li>
+       <li class="light" tapmode><a title="40%" rel='差评' href="javascript:;"></a></li>
+       <li class="light" tapmode><a title="60%" rel='差评' href="javascript:;"></a></li>
+       <li class="light" tapmode><a title="80%" rel='好评' href="javascript:;"></a></li>
+       <li><a title="100%" rel='好评' href="javascript:;"></a></li>
+     </ul>
+     <span id="cancle1">取消</span>
+     <span id="finshed">确定</span>
+   </div>
+  </div>
   <footer class="aui-bar aui-bar-tab tjk" style="">
-      <div class="aui-bar-tab-item aui-padded-l-15 aui-padded-r-15" tapmode style="width: 58%;">
-          <input class="search-input aui-font-size-14" id="inBtn" style="min-height: 1.7rem;border-radius:20px;background: #eeeeee; padding:0 .5rem;" type="text" placeholder="请输入评论内容">
-      </div>
-      <div class="btnbox aui-pull-right" id="btnbox">
-        <div class="aui-bar-tab-item aui-font-size-14" tapmode style="width: 4rem;line-height:2.5rem;background: #06bafa;color:#fff;">
-            添加课程
+    <!-- 评星 -->
+
+    <div class="aui-searchbar" id="search" style="">
+        <div class="aui-searchbar-input aui-border-radius" tapmode>
+
+            <form action="javascript:search();">
+                <input type="search" placeholder="请输入搜索内容" id="search-input">
+            </form>
         </div>
-        <div class="aui-bar-tab-item aui-font-size-14" tapmode style="width: 4rem;line-height:2.5rem;background: #fd4a2d;color:#fff;">
-            立即购买
-        </div>
+        <button class="fas" tapmod>评价</button>
+        <!-- <div class="aui-searchbar-cancel" tapmod>取消</div> -->
       </div>
-      <!-- <div id="postBtn" class="postBtn">
-        <button class="">发送</button>
-      </div> -->
   </footer>
-  <script type="text/javascript" src="../script/api.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../../script/api.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../../script/aui-dialog.js" charset="utf-8"></script>
   <script type="text/javascript">
-    var btnbox =  $api.byId('btnbox');
-    var inBtn =  $api.byId('inBtn');
-    var postBtn =  $api.byId('postBtn');
-    // $api.addEvt(inBtn,"focus",function(){
-    //   $api.css(btnbox,'display:none');
-    //   $api.css(postBtn,'display:block');
-    // });
-    // $api.addEvt(inBtn,"blur",function(){
-    //   $api.css(btnbox,'display:block');
-    //   $api.css(postBtn,'display:none');
-    // });
+  apiready = function(){
+    api.parseTapmode();
+    var dialog = new auiDialog();
+    var num=finalnum = tempnum= 0;	//num:传入点亮星星的个数，finalnum:最终点亮星星的个数，tempnum:一个中间值
+    var search1 = $api.byId('search-input');
+    var fs = $api.byId('fs');
+    var pj = $api.byId('pj');
+    var ppx = $api.byId('ppx');
+    var ulSra = $api.byId('ulSra');
+    var cancle1 = $api.byId('cancle1');
+    var finshed = $api.byId('finshed');
+    var lis = document.querySelectorAll(".px li");
+    $api.addEvt(cancle1, 'click', function(){
+      $api.css(ppx,'display:none');
+    });
+
+    $api.addEvt(search1,'focus', function(){
+      $api.css(ppx,'display:block');
+    });
+
+    for (var i = 1; i <= lis.length; i++) {
+     lis[i - 1].index = i;
+     $api.addEvt(lis[i - 1],'click', function(){
+  　 　$api.html(fs,this.childNodes[0].title);
+  　　 $api.html(pj,this.childNodes[0].rel);　
+       $api.css(cancle1,'display:none');
+       $api.css(finshed,'display:block');
+       fnShow(this.index);
+     });
+   }
+   $api.addEvt(finshed, 'click', function(){
+     dialog.alert({
+       title:$api.html(fs),
+       msg:'这里是内容',
+       buttons:['取消','确定']
+     },function(ret){
+       console.log(ret)
+     })
+   });
+    function fnShow(num) {
+		 finalnum= num || tempnum;
+		 for (var i = 0; i < lis.length; i++) {
+		  lis[i].className = i < finalnum? "light" : "";
+		 }
+		}
+  }
+
+    function closeWin() {
+      api.closeWin({
+      });
+    }
   </script>
   </body>
 </html>

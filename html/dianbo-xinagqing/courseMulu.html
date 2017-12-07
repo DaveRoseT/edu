@@ -5,13 +5,20 @@
     <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,initial-scale=1.0,width=device-width"/>
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
     <title>关注</title>
-    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
-    <link rel="stylesheet" href="../css/iconfont.css">
-    <link rel="stylesheet" href="../css/app.css">
+    <link rel="stylesheet" type="text/css" href="../../css/aui.css" />
+    <link rel="stylesheet" href="../../css/iconfont.css">
+    <link rel="stylesheet" href="../../css/app.css">
     <style type="text/css">
-      .aui-bar-nav{
-        background-color: #00a0ea;
+
+      body{
+
       }
+      /*.aui-bar-nav{
+        background-color: rgba(0,0,0,0);
+        position: fixed;
+        top: 0;
+        width: 100%;
+      }*/
       .aui-list .aui-list-item{
         padding-left: 1.2rem;
       }
@@ -22,29 +29,31 @@
       <div class="aui-pull-left"  onClick="closeWin()">
           <span class="aui-iconfont aui-icon-left"></span>
       </div>
-      <div class="aui-title">关注</div>
+      <div class="aui-title"></div>
       <!-- <div class="aui-pull-right" id="manage">
           <span class="">
             管理
           </span>
       </div> -->
   </header>
+  <!-- <div class="video" id="video">
+
+  </div> -->
   <div class="aui-content">
     <div class="aui-tab" id="tab">
-        <div id="tab1" class="aui-tab-item aui-active" tapmode onclick="randomSwitchBtn(this,0)">课程</div>
-        <div id="tab2" class="aui-tab-item" tapmode onclick="randomSwitchBtn(this,1)">名师</div>
-        <div id="tab3" class="aui-tab-item" tapmode onclick="randomSwitchBtn(this,2)">专家</div>
-        <div id="tab4" class="aui-tab-item" tapmode  onclick="randomSwitchBtn(this,3)">工作室</div>
+        <div id="tab1" class="aui-tab-item aui-active" tapmode onclick="randomSwitchBtn(this,0)">课程介绍</div>
+        <div id="tab2" class="aui-tab-item" tapmode onclick="randomSwitchBtn(this,1)">课程目录</div>
     </div>
   </div>
-  <script type="text/javascript" src="../script/api.js" charset="utf-8"></script>
-  <script type="text/javascript" src="../script/aui-tab.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../../script/api.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../../script/aui-tab.js" charset="utf-8"></script>
   <script type="text/javascript">
     apiready = function(){
     api.parseTapmode();
             var header = $api.byId('aui-header');
             var taber = $api.byId('tab');
-            // $api.fixStatusBar(header);
+            // var video1 = $api.byId('video');
+             $api.fixStatusBar(header);
             var headerPos = $api.offset(header);
             var taberH = $api.offset(taber);
             var body_h = api.winHeight;
@@ -53,7 +62,7 @@
                 scrollEnabled:false,
                 rect:{
                 x:0,
-                y:headerPos.h + taberH.h,
+                y:headerPos.h+ taberH.h ,
                 w:'auto',
                 h:body_h - headerPos.h - taberH.h
                 },
@@ -61,20 +70,12 @@
                 preload:4,
                 frames:
                 [{
-                    name: 'guanzhu-kechneg',
-                    url: 'guanzhu-kechneg.html',
+                    name: 'secondintro',
+                    url: 'secondintro.html',
                     bounces:false
                 },{
-                    name: 'guanzhu-mingshi',
-                    url: 'guanzhu-mingshi.html',
-                    bounces:false
-                },{
-                    name: 'guanzhu-zhuanjia',
-                    url: 'guanzhu-zhuanjia.html',
-                    bounces:false
-                },{
-                    name: 'guanzhu-gongzuoshi',
-                    url: 'guanzhu-gongzuoshi.html',
+                    name: 'secondmulu',
+                    url: 'secondmulu.html',
                     bounces:false
                 }]
             }, function(ret, err){
@@ -87,10 +88,6 @@
                     $api.addCls($api.byId('tab1'), 'aui-active');
                 }else if(index==1){
                     $api.addCls($api.byId('tab2'), 'aui-active');
-                }else if(index==2){
-                    $api.addCls($api.byId('tab3'), 'aui-active');
-                }else if(index==3){
-                    $api.addCls($api.byId('tab4'), 'aui-active');
                 }
             })
 
@@ -109,7 +106,6 @@
                 scroll:true
             });
         }
-
   </script>
   </body>
 </html>

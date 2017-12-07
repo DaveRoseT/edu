@@ -8,25 +8,119 @@
     <link rel="stylesheet" type="text/css" href="../css/aui.css" />
     <link rel="stylesheet" href="../css/iconfont.css">
     <link rel="stylesheet" href="../css/app.css">
-    <style type="text/css">
-
-      body{
-
+    <script src="../script/iscroll.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      var myScroll;
+      function loaded () {
+        myScroll = new IScroll('#wrapper', { scrollX: true, scrollY: false, mouseWheel: true });
       }
-      /*.aui-bar-nav{
-        background-color: rgba(0,0,0,0);
-        position: fixed;
-        top: 0;
-        width: 100%;
-      }*/
+      document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+    </script>
+    <style type="text/css">
       .aui-list .aui-list-item{
         padding-left: 1.2rem;
       }
+      #wrapper {
+          position: absolute;
+          z-index: 1;
+          top: 47px;
+          bottom: 0px;
+          left: 0;
+          width: 100%;
+          overflow: hidden;
+          height: 120px;
+        }
+
+        #scroller {
+          position: absolute;
+          z-index: 1;
+          -webkit-tap-highlight-color: rgba(0,0,0,0);
+          width: 680px;
+          -webkit-transform: translateZ(0);
+          -moz-transform: translateZ(0);
+          -ms-transform: translateZ(0);
+          -o-transform: translateZ(0);
+          transform: translateZ(0);
+          -webkit-touch-callout: none;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          -webkit-text-size-adjust: none;
+          -moz-text-size-adjust: none;
+          -ms-text-size-adjust: none;
+          -o-text-size-adjust: none;
+          text-size-adjust: none;
+        }
+
+        #scroller ul {
+          list-style: none;
+          overflow: hidden;
+          width: 100%;
+          height: 120px;
+          text-align: center;
+        }
+
+        #scroller li {
+          float: left;
+          width: 110px;
+          height: 120px;
+          font-size: 14px;
+          margin: 0 10px;
+          text-align: center;
+        }
+          #scroller li:first-child{
+            margin-left:20px;
+          }
+          #scroller li:last-child{
+            margin-right: 20px;
+          }
+        #scroller li img{
+          display: block;
+          width: 110px;
+          height: 90px;
+          border-radius: 3px;
+        }
+        #scroller li p{
+          line-height: 30px;
+        }
     </style>
 </head>
-<body>
-  <div class="aui-content">
+<body onload="loaded()">
+
+  <div class="aui-content" style="position:relative; overflow:hidden;margin-top:250px;">
     <div class="comment">
+      <div class="bt">
+          课程目录
+      </div>
+    </div>
+    <div id="wrapper">
+      <div id="scroller">
+        <ul>
+          <li>
+            <img src="../image/gril.jpg" alt="">
+            <p>梁老师</p>
+          </li>
+          <li>
+            <img src="../image/gril.jpg" alt="">
+            <p>梁老师</p>
+          </li>
+          <li>
+            <img src="../image/gril.jpg" alt="">
+            <p>梁老师</p>
+          </li>
+          <li>
+            <img src="../image/gril.jpg" alt="">
+            <p>梁老师</p>
+          </li>
+          <li>
+            <img src="../image/gril.jpg" alt="">
+            <p>梁老师</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="comment" style="margin-top:120px;">
 			<div class="bt">
 					我的笔记
 			</div>
@@ -66,18 +160,30 @@
     apiready = function(){
       // http://img.ksbbs.com/asset/Mon_1703/05cacb4e02f9d9e.mp4
       api.parseTapmode();
-
-      var videoPlayer = api.require('videoPlayer');
-      	
+      //视频
+      api.openFrame({
+				name : 'video',
+				url : 'video.html',
+				rect : {
+					x : 0,
+					y : 0,
+					w : 'auto',
+					h : 250
+				},
+				pageParam : {
+					name : 'test'
+				}
+			});
 
      }
 
+      //点击弹出小键盘
 			$('.st_bj').click(function(){
 				$('.bj_box').show();
 				$(this).hide();
 				$('textarea').focus();
 			})
-
+      //点击元素外部 元素隐藏
 			$(document).mouseup(function(e){
 			  var _con = $('.bj_box');   // 设置目标区域
 			  if(!_con.is(e.target) && _con.has(e.target).length === 0){ // Mark 1
@@ -85,7 +191,6 @@
 			   $('.st_bj').show();
 			  }
 			})
-
 			var clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
 			$(window).on('resize', function () {
 			    var nowClientHeight = document.documentElement.clientHeight || document.body.clientHeight;
